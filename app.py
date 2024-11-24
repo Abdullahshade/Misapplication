@@ -1,13 +1,55 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import sqlite3
+
+# SQLite Database setup
+def create_connection():
+    conn = sqlite3.connect('pneumonia_grading.db')  # Connect to SQLite database (or create it)
+    return conn
+
+def create_table():
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS grades (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            image_id TEXT,
+            pneumonia_grading TEXT,
+            percentage_grade INTEGER,
+            ground_truth INTEGER
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+def get_data():
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('SELECT * FROM grades')
+    data = c.fetchall()
+    conn.close()
+    return data
+
+def update_data(image_id, grading, percentage_grade):
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('''
+        UPDATE grades SET pneumonia_grading = ?, percentage_grade = ?
+        WHERE image_id = ?
+    ''', (grading, percentage_grade, image_id))
+    conn.commit()
+    conn.close()
+
+# Create table if it doesn't exist
+create_table()
 
 # Path to the updated metadata CSV and images folder
 metadata_file = "Updated_GTruth_with_Grading.csv"  # Update the path to your CSV file
 images_folder = "Images"  # Folder where images are stored
 
-# Load the updated metadata
-metadata = pd.read_csv(metadata_file)
+# Load the updated metadata from SQLite (instead of CSV)
+data = get_data()
 
 # App title
 st.title("Pneumonia Grading and Image Viewer")
@@ -16,21 +58,23 @@ st.title("Pneumonia Grading and Image Viewer")
 if "current_index" not in st.session_state:
     st.session_state.current_index = 0
 
-# Get the current row
+# Get the current row from the database
 current_index = st.session_state.current_index
-row = metadata.iloc[current_index]
+if current_index < len(data):
+    row = data[current_index]
+    image_id = row[1]  # Assuming image_id is in the second column
+    grading = row[2]  # Grading in the third column
+    percentage_grade = row[3]  # Percentage grade in the fourth column
+    ground_truth = row[4]  # Ground truth in the fifth column
 
-# Check if the image has been labeled in the 'Pneumonia_Grading' column
-if pd.isna(row['Pneumonia_Grading']) or row['Pneumonia_Grading'] == "No":
-    # Image has not been labeled, display the image
-    image_path = f"{images_folder}/{row['Id']}.jpeg"  # Assuming 'Id' corresponds to the image filename (with .jpeg extension)
+    # Display the image
+    image_path = f"{images_folder}/{image_id}.jpeg"  # Assuming 'image_id' corresponds to the image filename (with .jpeg extension)
     try:
-        st.image(Image.open(image_path), caption=f"Image ID: {row['Id']}", use_column_width=True)
+        st.image(Image.open(image_path), caption=f"Image ID: {image_id}", use_column_width=True)
     except FileNotFoundError:
-        st.error(f"Image {row['Id']}.jpeg not found in {images_folder}.")
+        st.error(f"Image {image_id}.jpeg not found in {images_folder}.")
     
     # Show Ground_Truth as pneumonia status
-    ground_truth = row['Ground_Truth']
     if ground_truth == 1:
         st.write("### Ground Truth: Pneumonia - Yes")
     else:
@@ -41,40 +85,38 @@ if pd.isna(row['Pneumonia_Grading']) or row['Pneumonia_Grading'] == "No":
     grading = st.selectbox(
         "Pneumonia Grading", 
         options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],  # Added "No Pneumonia" and "Critical"
-        index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(row["Pneumonia_Grading"] if pd.notna(row["Pneumonia_Grading"]) else "No Pneumonia")
+        index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(grading if pd.notna(grading) else "No Pneumonia")
     )
 
-    # Add a slider for percentage of grade (from 0 to 100)
-    percentage_grade = row.get("Percentage of Grade", 0)  # Get the value from CSV or default to 0
-    if not isinstance(percentage_grade, (int, float)) or pd.isna(percentage_grade):
-        percentage_grade = 0  # Default to 0 if invalid data
+    # Convert the percentage_grade to an integer (remove the '%' symbol if it exists)
+    if isinstance(percentage_grade, str) and '%' in percentage_grade:
+        percentage_grade = int(percentage_grade.replace('%', ''))
+    else:
+        percentage_grade = int(percentage_grade)
 
-    # Slider for selecting percentage
+    # Add a slider for percentage of grade (from 0 to 100)
     percentage_grade = st.slider(
         "Percentage of Grade", 
         min_value=0, 
         max_value=100, 
-        value=int(percentage_grade),  # Ensure the value is an integer
+        value=percentage_grade,  # Ensure the value is an integer
         step=1
     )
 
     # Format the percentage grade as a string with '%' sign
     formatted_percentage = f"{percentage_grade}%"
 
-    # Save changes
+    # Save changes to database
     if st.button("Save Changes"):
-        metadata.at[current_index, "Pneumonia_Grading"] = grading
-        metadata.at[current_index, "Percentage of Grade"] = formatted_percentage  # Save formatted percentage grade
-        metadata.to_csv(metadata_file, index=False)
-        st.success(f"Changes saved! Percentage of Grade: {formatted_percentage}")
+        update_data(image_id, grading, formatted_percentage)
+        st.success(f"Changes saved! Image ID: {image_id}, Grading: {grading}, Percentage of Grade: {formatted_percentage}")
 
 else:
-    # Image is already labeled, skip displaying anything (do not show the image or grading page)
-    st.session_state.current_index += 1  # Skip to the next image if this one is labeled
+    st.write("No more images available for grading.")
 
 # Navigation between images
 col1, col2 = st.columns(2)
 if col1.button("Previous") and current_index > 0:
     st.session_state.current_index -= 1
-if col2.button("Next") and current_index < len(metadata) - 1:
+if col2.button("Next") and current_index < len(data) - 1:
     st.session_state.current_index += 1
