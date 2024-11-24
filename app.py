@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 import sqlite3
+import os
 
 # SQLite Database setup
 def create_connection():
@@ -44,11 +45,10 @@ def update_data(image_id, grading, percentage_grade):
 # Create table if it doesn't exist
 create_table()
 
-# Path to the updated metadata CSV and images folder
-metadata_file = "Updated_GTruth_with_Grading.csv"  # Update the path to your CSV file
+# Path to the images folder
 images_folder = "Images"  # Folder where images are stored
 
-# Load the updated metadata from SQLite (instead of CSV)
+# Load the updated metadata from SQLite
 data = get_data()
 
 # App title
@@ -67,13 +67,13 @@ if current_index < len(data):
     percentage_grade = row[3]  # Percentage grade in the fourth column
     ground_truth = row[4]  # Ground truth in the fifth column
 
-    # Display the image
-    image_path = f"{images_folder}/{image_id}.jpeg"  # Assuming 'image_id' corresponds to the image filename (with .jpeg extension)
-    try:
+    # Display the image (load it from the images folder)
+    image_path = os.path.join(images_folder, f"{image_id}.jpeg")  # Assuming 'image_id' corresponds to the image filename (with .jpeg extension)
+    if os.path.exists(image_path):
         st.image(Image.open(image_path), caption=f"Image ID: {image_id}", use_column_width=True)
-    except FileNotFoundError:
+    else:
         st.error(f"Image {image_id}.jpeg not found in {images_folder}.")
-    
+
     # Show Ground_Truth as pneumonia status
     if ground_truth == 1:
         st.write("### Ground Truth: Pneumonia - Yes")
