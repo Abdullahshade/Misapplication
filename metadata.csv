@@ -1,0 +1,564 @@
+case_url,filename,projection,presentation,findings,age,gender
+https://litfl.com/CXR-Case-001,CXR-CASE-001-LITFL.jpg,Frontal,A 22 yo male presents with worsening chronic cough and breathlessness. He has been underweight since childhood.,"There is upper lobe predominant bronchial wall thickening with ring shadows and patches of consolidation.
+There are features of mild airflow obstruction with flattened hemidiaphragms. 
+The features suggest cystic bronchiectasis and given the symmetrical upper lobe predominance and clinical features, cystic fibrosis (CF) is most likely.
+
+Lateral:
+This more clearly demonstrates the ring shadows and clear upper lobe predominance of the bronchiectasis. ",26,Male
+https://litfl.com/CXR-Case-001,CXR-CASE-001-Lateral-CXR-LITFL.jpg,Lateral,A 22 yo male presents with worsening chronic cough and breathlessness. He has been underweight since childhood.,"There is upper lobe predominant bronchial wall thickening with ring shadows and patches of consolidation.
+There are features of mild airflow obstruction with flattened hemidiaphragms. 
+The features suggest cystic bronchiectasis and given the symmetrical upper lobe predominance and clinical features, cystic fibrosis (CF) is most likely.
+
+Lateral:
+This more clearly demonstrates the ring shadows and clear upper lobe predominance of the bronchiectasis. ",22,Male
+https://litfl.com/CXR-Case-002,CXR-CASE-002-LITFL.jpg,Frontal,44 yo man has routine CXR after possible faint,"There is dextrocardia.
+* The stomach gas bubble is also on the right side, suggesting situs inversus*
+There are coarse, thickened bronchial markings and small ring shaddows, most notable in the upper lobes, consistent with bronchiectasis",44,Male
+https://litfl.com/CXR-Case-003,CXR-CASE-003-LITFL.jpg,Frontal,55 yo lady presents with worsening chronic cough and wheeze,"This CXR demonstrates bronchiectasis. 
+There are coarse, thickened airway markings with ring shadows bilaterally, but worse in the left upper lobe (obscuring the heart border) and left lower lobe, obscruting the hemidiaphragm. 
+* There is also scoliosis of the spine*",55,Female
+https://litfl.com/CXR-Case-004,CXR-CASE-004-LITFL.jpg,Frontal,A 60 yo man is intubated in ED having presented by ambulance profoundly hypoxaemic in respiratory distress,"There is consolidation throughout the right side, sparing the periphery. 
+There is also an air bronchogram behind the heart. 
+This is most likely a pneumonia. 
+*Note the ETT and left subclavian line*",60,Male
+https://litfl.com/CXR-Case-005,CXR-CASE-005-LITFL.jpg,Frontal,"An 18 yo male presents with fevers, productive cough with fresh haemoptysis, and wheeze. He has a background history of frequent chest infections as a child and teenager.","There is upper lobe predominant bronchial wall thickening and ring shadows suggestive of bronchiectais and possbily cystic fibrosis. 
+* In the left mid zone there is a cavity with a fluid level and surrounding consolidation suggesting a lung abscess*",18,Male
+https://litfl.com/CXR-Case-006,CXR-CASE-006-LITFL.jpg,Frontal,74 yo male ex-smoker presents with worsening breathlessness,"There are reduced lung markings throught the right side with tethers of lung to the chest wall suggesting giant bullae, not pneumothorax 
+There is a fracture to the right 9th rib, and possibly 8th",74,Male
+https://litfl.com/CXR-Case-007,CXR-CASE-007-LITFL.jpg,Frontal,45 year old male presents confused and hypoxaemic,"There is complete white out of the left lung with air bronchograms in the mid zone, caused by pneumonia and a smaller patch of consolidation in the right mid zone.",45,Male
+https://litfl.com/CXR-Case-008,CXR-CASE-008-LITFL.jpg,Frontal,40 year old male presents to emergency in severe respiratory distress and is intubated on arrival.,"There is complete white out of the left lung caused by pneumonia (see air bronchograms mid zone). 
+* There is partial vollume loss with collapse because the right heart border amd trachea have shifted to the left. * 
+There is a large bore chest drain in situ on the left. 
+*ETT (probably a bit too proximal) and NG tube also present*",40,Male
+https://litfl.com/CXR-Case-009,CXR-CASE-009-LITFL.jpg,Frontal,"78 year old female current smoker presents with wheeze, productive cough and breathlessness worsening over 6 days.","Non-infective exacerbation COPD 
+The lung fields are overinflated with flattened hemidiagragms consisent with airways disease and COPD. 
+No focal consolidation to suggest pneumonia.",78,Female
+https://litfl.com/CXR-Case-010,CXR-CASE-010-LITFL.jpg,Frontal,80 year old female presents with palpitations. She has been more breathless recently and has been taking her inhalers more frequently.,"The lung fields are overinflated with flattened hemidiagragms consisent with overinflation from airways disease (probable COPD). 
+*There is a safety pin that appears to be in the stomach, or external artefact*",80,Female
+https://litfl.com/CXR-Case-011,CXR-CASE-011-LITFL.jpg,Frontal,27 year old male drowned in sea water; intubated at the scene; and transferred to emergency.,"Acute Respiratory Distress Syndrome (ARDS) 
+There is bilateral airspace opacification throughout both lungs, sparing the apices. 
+*ETT, IJ line and NGT in situ *",27,Male
+https://litfl.com/CXR-Case-012,CXR-CASE-012-LITFL.jpg,Frontal,"48 year old male presents with worsening dyspnoea, dry cough and hypoxia.","There are bilateral perihilar infiltrates and consolidation. 
+This is most likely Pneumocystis Jiroveci Pneumonia (PJP)",48,Male
+https://litfl.com/CXR-Case-013,CXR-CASE-013-LITFL.jpg,Frontal,76 year old male presents with severe respiratory distress and is intubated,"There is complete collapse of the right upper lobe 
+* Note the resultant elevation of the right horizontal fissure * 
+Patchy LUL opacification suggestive of consolidation 
+*ETT and NG tube also present*",76,Male
+https://litfl.com/CXR-Case-014,CXR-CASE-014-LITFL.jpg,Frontal,74 yo male presents in severe respiratory distress and is intubated,"There is complete white out on the left side. 
+Features are consistent with complete collapse of the left lung 
+The trachea is deviated to the left and the right heart border is not visible suggesting mediastinal shift to the left 
+*There is an ETT and NG tube in situ*",74,Male
+https://litfl.com/CXR-Case-015,CXR-CASE-015-LITFL.jpg,Frontal,30 year old male: Single gun shot wound to the right thigh. Isolated injury. Patient alert; in pain; vitals stable and normal. Routine trauma CXR is performed,"There is a 5.56 bullet projected over the lower left lung field lateral to the heart. 
+* There is no evidence of any injury to the chest or lungs",30,Male
+https://litfl.com/CXR-Case-016,CXR-CASE-016-LITFL.jpg,Frontal,86 year old female presents with known bronchiectasis presents with shortness of breath and a worsening cough. She is more hypoxaemic than her normal baseline.,"There is complete collapse of the left lower lobe creating the sail sign behind the heart and volume loss in the left hemithorax 
+* The lung fields are overinflated, consistent with gas trapping from airways disease * 
+There are age-related bony changes of the thoracic vertebral column and ribs",86,Female
+https://litfl.com/CXR-Case-016,CXR-CASE-016-Repeat-CXR-LITFL.jpg,Frontal,86 year old female presents with known bronchiectasis presents with shortness of breath and a worsening cough. She is more hypoxaemic than her normal baseline.,"There is complete collapse of the left lower lobe creating the sail sign behind the heart and volume loss in the left hemithorax 
+* The lung fields are overinflated, consistent with gas trapping from airways disease * 
+There are age-related bony changes of the thoracic vertebral column and ribs",86,Female
+https://litfl.com/CXR-Case-017,CXR-CASE-017-LITFL.jpg,Frontal,"67 year old male presents with shortness of breath, cough and significant weight loss. He had a bronchoscpy the following day.","There is volume loss in the right hemithorax with collapse of the right upper lobe 
+*There is patchy consolidation in the right lower and middle lobes*",67,Male
+https://litfl.com/CXR-Case-018,CXR-CASE-018-LITFL.jpg,AP,50 year old male presents confused and hypoxaemic.,There is complete collapse of the right lung with tracheal deviation and mediastinal shift,50,Male
+https://litfl.com/CXR-Case-019,CXR-CASE-019-LITFL.jpg,Frontal,"30 year old female presents with night sweats, weight loss and a cough","There is bilateral hilar lymphadenopathy 
+* The lung fields are otherwise clear*",30,Female
+https://litfl.com/CXR-Case-020,CXR-CASE-020-LITFL.jpg,Frontal,16 year old male with severe burns to 40% of his body surface,"There is bilateral multifocal airspace opacification, mainly in the perihilar and lower zones. 
+* There are four large bore chest tubes in situ * 
+* There is an ETT, NGT and right subclavian vascular line * 
+* The multiple metalic artifacts are burns dressings*",16,Male
+https://litfl.com/CXR-Case-021,CXR-CASE-021-LITFL.jpg,Frontal,A 64 year old female presents with worsening breathlessness and cough over 2 weeks,"There are widespread, patchy rounded infiltrates of varying size throughout both lung fields. 
+The infiltrates appear more confluent and dense in the lower lobes, perhaps repressenting some consolidation. 
+Some of the lesions in the upper zones appear to be cavitating.",64,Female
+https://litfl.com/CXR-Case-022,CXR-CASE-022-LITFL.jpg,Frontal,A 76 year old man presents with worsening breathlessness over 3-4 weeks.,"There is a small right pleural effusion. 
+There is loss of the left hemidiaphragm and left heart border with diffuse increased opacification in the left lower zone.",76,Male
+https://litfl.com/CXR-Case-023,CXR-CASE-023-LITFL.jpg,Frontal,26 year old male presents with night sweats and weight loss,"PA chest x-ray demonstrates large superior soft tissue density. 
+*The hilar vessels are visualised through the mass 
+The rest of the lungs are unremarkable 
+* There is a large gastric bubble*
+
+Lateral:
+Lateral chest x-ray demonstrates anterior superior mediastinal mass",26,Male
+https://litfl.com/CXR-Case-023,CXR-CASE-023-Lateral-CXR-LITFL.jpg,Lateral,26 year old male presents with night sweats and weight loss,"PA chest x-ray demonstrates large superior soft tissue density. 
+*The hilar vessels are visualised through the mass 
+The rest of the lungs are unremarkable 
+* There is a large gastric bubble*
+
+Lateral:
+Lateral chest x-ray demonstrates anterior superior mediastinal mass",26,Male
+https://litfl.com/CXR-Case-024,CXR-CASE-024-LITFL.jpg,AP,A 52 year old lady presents with worsening dyspnoea and hypoxaemia,"There is bilateral basal atelectasis with otherwise clear lung fields 
+* AP, rotated film*",52,Female
+https://litfl.com/CXR-Case-025,CXR-CASE-025-LITFL.jpg,Frontal,56 year old male with a recent diagnosis of lung cancer presents with dyspnoea. What treatment has he been receiving?,There is consolidation with a sharply delineated lateral margin on the right side and some patchy changes on the left,56,Male
+https://litfl.com/CXR-Case-026,CXR-CASE-026-LITFL.jpg,Frontal,72 year old female presents with worsening cough and dypnoea. Inflammatory markers are normal.,"There are diffuse increased interstitial markings throughout both lungs without zonal distribution 
+The reticular-nodular pattern is consistent with pulmonary fibrosis 
+*There is an air-fluid level overlapping the heart shadow, with absence of usual gastric air sinus. This is in keeping with a large hiatus hernia*",72,Female
+https://litfl.com/CXR-Case-027,CXR-CASE-027-LITFL.jpg,Frontal,"A 69 year old man presents with slowly worsening dypnoea, raised JVP, peripheral oedema and cyanosis.","There is diffuse reticulonodular infiltrate across all lung fields, but most marked in the bases. 
+*There is loss of volume in both lung fields * 
+The apprearances are consistent with pulmonary fibrosis",69,Male
+https://litfl.com/CXR-Case-028,CXR-CASE-028-CXR-LITFL.jpg,Frontal,A 78 year old man presents with chest pain and has crackles in his chest on auscultation.,"There is diffuse reticular-nodular shadowing throughout both lung fields with some sparining the bases. 
+*The heart size is normal and the pleural spaces are clear 
+*The are surgical clips in the right mid zone, likely from a right lower lobe biopsy. *",78,Male
+https://litfl.com/CXR-Case-029,CXR-CASE-029-CXR-LITFL.jpg,Frontal,"A 32 year old old male presents with a dry cough, malaise and arthralgia","There is bilateral hilar adenopathy and bands of atelectasis in both lung bases. 
+*Lung parenchyma looks normal.",32,Male
+https://litfl.com/CXR-Case-030,CXR-CASE-030-CXR-LITFL.jpg,Frontal,A 28 year old female presents with painful lesions on her shins and malaise,There is bilateral hilar adenopathy. * There are a few subtle reticulonodular shaddows in the lung parenchyma.,28,Female
+https://litfl.com/CXR-Case-031,CXR-CASE-031-CXR-LITFL.jpg,Frontal,A 32 year old female presents with dry cough and dyspnoea,"There is bilateral hilar adenopathy with a predominantly nodular infiltrate in the lung fields, sparing the bases.",32,Female
+https://litfl.com/CXR-Case-032,CXR-CASE-032-CXR-LITFL.jpg,Frontal,A 51 year old man presents with syncope. He has a long history of breathlessness and dry cough.,"There are multifocal bilateral reticulonodular air-space opacities, predominantly perihilar and mid zone distribution.",51,Male
+https://litfl.com/CXR-Case-033,CXR-CASE-033-CXR-LITFL.jpg,Frontal,"A 48 year old man is referred from the Chest Clinic with worsening breathlessness. SpO2 on air 85%, RR 18","There are bilateral predominantly mid zone multifocal parenchymal infiltrates, worse on the left 
+There is marked coarse fibrosis in the mid zones, worse on the left and affecting the horizontal fissure with some volume loss of the right upper lobe.",48,Male
+https://litfl.com/CXR-Case-034,CXR-CASE-034-CXR-LITFL.jpg,AP,A 54 yo man presents hypoxaemic with worsening of a long standing productive cough and low grade fever. He stopped smoking 20 years ago.,"This AP film has an irregular thin walled large cavity in the medial right mid zone. 
+The hilar vessels are visible suggesting it is situated either posteriorly or anteriorly . 
+There are coarse reticular markings in the right middle lobe and lingular lobes suggestive of bronchiectasis.
+
+Lateral:
+The lateral confirms the presence of a cavity in the right apical segmnent of the lower lobe. 
+There is no fluid level. 
+The is some scattered surrounding airspace shadowing (consolidation)",54,Male
+https://litfl.com/CXR-Case-034,CXR-CASE-034-Lateral-CXR-LITFL.jpg,Lateral,A 54 yo man presents hypoxaemic with worsening of a long standing productive cough and low grade fever. He stopped smoking 20 years ago.,"This AP film has an irregular thin walled large cavity in the medial right mid zone. 
+The hilar vessels are visible suggesting it is situated either posteriorly or anteriorly . 
+There are coarse reticular markings in the right middle lobe and lingular lobes suggestive of bronchiectasis.
+
+Lateral:
+The lateral confirms the presence of a cavity in the right apical segmnent of the lower lobe. 
+There is no fluid level. 
+The is some scattered surrounding airspace shadowing (consolidation)",54,Male
+https://litfl.com/CXR-Case-035,CXR-CASE-035-CXR-LITFL.jpg,Frontal,"A 21 yo man living in sheltered accommodation presents with fever, malaise and productive cough. He has a history of IV drug use, but has not used within the last 4 weeks. Blood tests reveal raised inflammatory markers.","There is a left upper lobe thick walled cavity with an air fluid level and surrounding consolidation. 
+*There may be left hilar adenopathy. The rest of the lung field and pleura look normal",21,Male
+https://litfl.com/CXR-Case-036,CXR-CASE-036-CXR-LITFL.jpg,Frontal,"A 19 year old man is found collapsed at a friends house and brought to ED. His mates say he has been drinking alcohol heavily but deny other drug use. BP 92/53, warm and dilated peripherally, Temp 37.7C, responds to voice.","There is diffuse air space shaddowing in the right mid zone with an area of central lucency and air fluid level. 
+*A left nipple ring is noted 
+The rest of lung parenchyma and pleura are normal",19,Male
+https://litfl.com/CXR-Case-037,CXR-CASE-037-CXR-LITFL.jpg,Frontal,"A 24 year old man presents with fever, pleuritic chest pain on the right and a dry cough.","There is a cavitating lesion in the right mid zone laterally with an air fluid level and surroundng consolidation.
+Allowing for slight rotation and a left nipple ring, the film is otherwise normal
+
+Lateral:
+Lateral XR confirms the presence of a cavitating lesion with air fluid level and surrounding consolidation. 
+The lesion is situated in the apical segment of the right lower lobe",24,Male
+https://litfl.com/CXR-Case-037,CXR-CASE-037-Lateral-CXR-LITFL.jpg,Lateral,"A 24 year old man presents with fever, pleuritic chest pain on the right and a dry cough.","There is a cavitating lesion in the right mid zone laterally with an air fluid level and surroundng consolidation.
+Allowing for slight rotation and a left nipple ring, the film is otherwise normal
+
+Lateral:
+Lateral XR confirms the presence of a cavitating lesion with air fluid level and surrounding consolidation. 
+The lesion is situated in the apical segment of the right lower lobe",24,Male
+https://litfl.com/CXR-Case-038,CXR-CASE-038-CXR-LITFL.jpg,Frontal,"A 38 year old female who has recently entered the country is referred by a GP with increasing cough, fevers and sweats.","There is diffuse air space shaddowing with volume loss in the right upper lobe with an area of lucency suggesting a cavity. 
+There is volume loss, air space shaddowing in the left lower lobe and possibly a small pleural effusion. 
+*There is external artefact overlying the left lung apex and clavicle.",38,Female
+https://litfl.com/CXR-Case-039,CXR-CASE-039-CXR-LITFL.jpg,Frontal,"A 74 yo lady is sent in to ED from cardiology clinic with dyspnoea, pleuritic chest pain and fevers. She has a PPM and type II diabetes","There is a left pleural effusion, left basal increased airspace opacification with central lucency and an air fluid level. 
+*There are multiple different size sub-centimetre rounded lesions throughout both lung fields, some with minor cavitation.
+
+Lateral:
+Lateral XR demonstrates a cavity with an air fluid level and associated pleural effusion with loculated fluid superior to the cavity.",74,Female
+https://litfl.com/CXR-Case-039,CXR-CASE-039-Lateral-CXR-LITFL.jpg,Lateral,"A 74 yo lady is sent in to ED from cardiology clinic with dyspnoea, pleuritic chest pain and fevers. She has a PPM and type II diabetes","There is a left pleural effusion, left basal increased airspace opacification with central lucency and an air fluid level. 
+*There are multiple different size sub-centimetre rounded lesions throughout both lung fields, some with minor cavitation.
+
+Lateral:
+Lateral XR demonstrates a cavity with an air fluid level and associated pleural effusion with loculated fluid superior to the cavity.",74,Female
+https://litfl.com/CXR-Case-040,CXR-CASE-040-CXR-LITFL.jpg,Frontal,A 64 year old male smoker presents to his GP with weight loss and a cough and is sent to ED. The patient was put on 25mg of prednisolone for presumed polymyalgia rheumatica 6 weeks ago. He has type II diabetes.,"There is an air fluid level in a large cavity in the left upper zone with associated increased airspace shadowing and left hilar adenopathy. 
+There is increased lucency above the air fluid level with scanty lung markings suggesting this is either a large cavity or involving the pleural space. 
+The rest of the lung parenchyma and pleural spaces are normal.",64,Male
+https://litfl.com/CXR-Case-041,CXR-CASE-041-CXR-LITFL.jpg,Frontal,A 40 year old male presents with septic shock and reduced consciousness,"There are multiple large areas of airspace opacification projecting over both lung fields. 
+* Areas of opacification project primarily over the lower and midzones, and completely obscure the heart border. 
+* The right base is more dense, sugesting possible pleural effusion, with fluid lateraly and in the horizontal fissure.
+
+Lateral:
+T12 has diffusely and homogenously increased density – an ‘ivory vertebra‘ (this is actually visible on the PA – but we are easily distratced…). This refers to a diffuse homogeneous increase in opacity of a vertebral body that otherwise retains its size and contours. 
+Multiple rounded patches of airspace opacification throughout the left lung field and fluid within the horizantal fissure.",40,Male
+https://litfl.com/CXR-Case-041,CXR-CASE-041-Lateral-CXR-LITFL.jpg,Lateral,A 40 year old male presents with septic shock and reduced consciousness,"There are multiple large areas of airspace opacification projecting over both lung fields. 
+* Areas of opacification project primarily over the lower and midzones, and completely obscure the heart border. 
+* The right base is more dense, sugesting possible pleural effusion, with fluid lateraly and in the horizontal fissure.
+
+Lateral:
+T12 has diffusely and homogenously increased density – an ‘ivory vertebra‘ (this is actually visible on the PA – but we are easily distratced…). This refers to a diffuse homogeneous increase in opacity of a vertebral body that otherwise retains its size and contours. 
+Multiple rounded patches of airspace opacification throughout the left lung field and fluid within the horizantal fissure.",40,Male
+https://litfl.com/CXR-Case-042,CXR-CASE-042-CXR-LITFL.jpg,Frontal,A 63 year old lady presents having been diagnosed with a left pneumothorax in St Elsewhere,"There are multiple rounded ring shadows in the right upper lung, with overlying chest wall deformity. 
+*A central line has been inserted, its tip projects over the superior vena cava. 
+* A chest drain projects over the left mid-zone. There is no associated pleural effusion. 
+* Median sternotomy wires are visible",63,Female
+https://litfl.com/CXR-Case-043,CXR-CASE-043-CXR-LITFL.jpg,Frontal,An 85 year old lady presents with worsening dyspnoea and chronic cough,"There is bilateral apical pleural calcification, more pronounced on the right 
+There is additional right upper lobe fibrosis and traction causing the right lium to be elevated, mediastinal shift and volume loss on the right side.",85,Female
+https://litfl.com/CXR-Case-044,CXR-CASE-044-CXR-LITFL.jpg,Frontal,‘Routine‘ CXR on a 64 year old female attending the emergency department after an hour of central chest pain,"There is a calicified suprahilar lymph node on the right (station 4R). 
+Remaining mediastinum, lung parenchyma and pleural are normal.",64,Female
+https://litfl.com/CXR-Case-045,CXR-CASE-045-CXR-LITFL.jpg,Frontal,An 81 year old man is referred in from respiratory clinic for inpatient assessment of chronic type II respiratory failure,"There are bilateral multiple ring shaddows in both apicies and scattered calification, more prominent in the left apex. 
+The trachea is deviated tio the right and may be narrowed. 
+There is associated 2nd, 3rd, and 4th rib distruction bilaterally. 
+The remaining lower lobes parenchyma appear normal.",81,Male
+https://litfl.com/CXR-Case-046,CXR-CASE-046-CXR-LITFL.jpg,Frontal,"A 25 year old lady from Poland presents with dyspnoea, cough, fevers and sweats","There are small rounded opacities of variable size throughout both lung fields, more dense on the right. 
+The right heart border is lost, suggesting middle lobe involvement.",25,Female
+https://litfl.com/CXR-Case-047,CXR-CASE-047-CXR-LITFL.jpg,Frontal,A 76 year old lady presents with dizzy spells – a routine CXR is performed,"There are calcified nodules in the left mid zone and left upper zone behind the clavicle. 
+*The aorta is unfolded. 
+*Lung volmes look a little small, with no evidence of interstitial lung disease this may be related to her extrathoracic adiposity.",76,Female
+https://litfl.com/CXR-Case-048,CXR-CASE-048-CXR-LITFL.jpg,Frontal,A 22 year old female presents with fevers and breathlessness,"There is increased opacification throughout the left hemithorax with loss of the left heart outline although the left hemidiaphragm remains visible. 
+Air bronchograms are visible suggesting consolidation.",22,Female
+https://litfl.com/CXR-Case-049,CXR-CASE-049-CXR-LITFL.jpg,Frontal,An 81 year old lady is admitted drowsy with type II respiratory failure,"There is bilateral apical pleural calcification and upper lobe fibrosis, worse on the right. 
+Both hilar are elevated and there is volume loss on the right side, with deviation of the mediastinum and trachea to the right.",81,Female
+https://litfl.com/CXR-Case-050,CXR-CASE-050-CXR-LITFL.jpg,Frontal,An 83 year old man is admitted with acute on chronic type II respiratory failure,"The patient has had a thoracoplasty with consequential loss of volume in the right hemithorax. 
+There is left upper lobe fibrosis. 
+There is patchy opacification throught both lung fields likely representing fibrosis however acute infiltrate, particualrly in the left lower zone is possible. 
+*There is marked kypho-scoliosis.",83,Male
+https://litfl.com/CXR-Case-051,CXR-CASE-051-CXR-LITFL.jpg,Frontal,A 52 year old lady presents with worsening weight loss and fatigue over several months,"There are multiple rounded well defined opacities of varying sizes throughout both fields 
+* A left mastectomy is noted 
+* No obvious bony lesions",52,Female
+https://litfl.com/CXR-Case-052,CXR-CASE-052-CXR-LITFL.jpg,Frontal,A 45 year old male is found collapsed in respiratory distress and is intubated on arrival in emergency,"There are bilateral air bronchograms and consolidation in both upper lobes including the lingula. 
+The left hemidiaphragm is a little indistinct, possibly refelcting early lower lobe consolidation, or small pleural effusion 
+* There is an ETT, an NGT in situ, with a left subclavian line.",45,Male
+https://litfl.com/CXR-Case-053,CXR-CASE-053-CXR-LITFL.jpg,Frontal,A 79 year old man is placed on non invasive ventilation for progressive type II respiratory failure with a history of worsening cough and fevers.,"There is volume loss and fibrosis in the left upper lobe (hilum pulled up). 
+There is airspace opacification in the right lower lobe on a background of possible fibrosis throughout both lung fields.",79,Male
+https://litfl.com/CXR-Case-054,CXR-CASE-054-CXR-LITFL.jpg,Frontal,A 46 year old man presents with transient central chest discomfort. Routine CXR.,"There are multiple small calcified parenchymal densities projecting over both lung fields. 
+* The lungs are otherwise clear.",46,Male
+https://litfl.com/CXR-Case-055,CXR-CASE-055-CXR-LITFL.jpg,Frontal,A 24 year old male presents with worsening cough and breathlessness and a 3 day history of an itchy rash predominantly over his torso. ,"There is are bilateral mid zone nodular infiltrates, predominantly affecting the upper lobes. 
+There is a vesicular rash over the torso, arms and face. 
+The lesions are of different stages: macules, paopules and vesicules.",24,Male
+https://litfl.com/CXR-Case-056,CXR-CASE-056-CXR-LITFL.jpg,AP,A 77 year old man with known COPD presents with an acute exacerbation not responding to oral corticosteroids and antibiotics. He has lost 5 kg in the last 4 months.,"Both long fields are overinflated with flattened diaphragms. 
+There is a tumor in the right upper lobe with associated right hilar adenopathy.",77,Male
+https://litfl.com/CXR-Case-057,CXR-CASE-057-CXR-LITFL.jpg,Frontal,An 89 year old man presents with increasing tiredness and lethargy,"There is a large, rounded mass in the right upper zone. 
+There are multiple small rounded opacities in the right mid and lowert zones. 
+The aorta is unfolded. Bones look normal.",89,Male
+https://litfl.com/CXR-Case-058,CXR-CASE-058-CXR-LITFL.jpg,Frontal,An 86 year old man presents with worsening cough and haemoptysis. He stopped smoking 25 years ago. ,"There is deviation of the trachea to the right with associated right upper lobe collapse. 
+The right hilum appears prominent. Pleural spaces clear.",86,Male
+https://litfl.com/CXR-Case-059,CXR-CASE-059-CXR-LITFL.jpg,AP,A 55 year old man is brought to ED with ‘dizzy spells’. Routine CXR is performed.,"There is a rounded opacity laterally in the right upper lobe. 
+Sternotomy wires and a Carpentier-Edwards AVR are noted.
+
+Lateral:
+Lateral film demonstrates the AVR in situ more clearly.",55,Male
+https://litfl.com/CXR-Case-059,CXR-CASE-059-Lateral-CXR-LITFL.jpg,Lateral,A 55 year old man is brought to ED with ‘dizzy spells’. Routine CXR is performed.,"There is a rounded opacity laterally in the right upper lobe. 
+Sternotomy wires and a Carpentier-Edwards AVR are noted.
+
+Lateral:
+Lateral film demonstrates the AVR in situ more clearly.",55,Male
+https://litfl.com/CXR-Case-060,CXR-CASE-060-CXR-LITFL.jpg,Frontal,"A 54 year old male presents with cough, high fevers and sweats","There are air bronchograms and consolidation in the medial segment of the left lower lobe. 
+*The rest of the lung fields are clear",54,Male
+https://litfl.com/CXR-Case-061,CXR-CASE-061-CXR-LITFL.jpg,Frontal,A 67 year old man presents with worsening breathlessness and cough unresponsive to antibiotics,"There is deviation of the trachea to the right and a raised right hilum with associated right upper lobe collapse. 
+The right heart border is lost indicating right middle lobe collapse. 
+There is resultant volume loss in the right hemithorax. 
+There are multiple rounded opacitites in both lung fields, the largest in the right upper lobe.",67,Male
+https://litfl.com/CXR-Case-062,CXR-CASE-062-CXR-LITFL.jpg,Frontal,A 76 year old lady is sent in by her GP with worsening dyspnoea and wheeze after failing to respond to oral corticosteroids and antibiotics,"There is over-inflation of both lung fields with flattening of the hemidiapragms. 
+There is a large spiculated mass in the right upper lobe.",76,Female
+https://litfl.com/CXR-Case-063,CXR-CASE-063-CXR-LITFL.jpg,Frontal,A 48 year old man presents with syncope on exertion. He admits to being breathless on and off for the last 2 years. He has never smoked and is HIV positive with a normal CD4 count.,"Lung fields are clear. 
+There are prominent, enlarged pulmonary arteries with pruning of peripheral blood vessels. 
+Heart size is normal.",48,Male
+https://litfl.com/CXR-Case-064,CXR-CASE-064-CXR-LITFL.jpg,Frontal,"A 56 year old man presents with increasing right sided shoulder pain, unresponsive to low dose opiates.","There is increased soft tissue shadowing in the right apex and airspace shadowing in the right upper lobe. 
+The right hilum is raised. Otherwise lung fields are clear. 
+No obvious rib destruction around the lesion.",56,Male
+https://litfl.com/CXR-Case-065,CXR-CASE-065-CXR-LITFL.jpg,Frontal,A 78 year old female presents with haemoptysis,"There is a large soft tissue mass in the medial right lower zone. 
+Volume loss in the right hemithorax. 
+Lung fields otherwise clear, pleura clear.",78,Female
+https://litfl.com/CXR-Case-066,CXR-CASE-066-CXR-LITFL.jpg,Frontal,A 71 year old male presents with a self terminating first seizure.,"There is a rounded soft tissue mass in the right lower lobe with probable ipsilateral hilar adenopathy. 
+There is a further smaller lesion in the left upper lobe laterally. 
+The pleural spaces are clear.",71,Male
+https://litfl.com/CXR-Case-067,CXR-CASE-067-CXR-LITFL.jpg,Frontal,"A 54 year old male develops respiratory distress 7 days post sternotomy for CABG. Initial recovery uncomplicated, worsening cough last 2 days.","There is diffuse opacity over the left hemithorax and loss of distinction of the upper margins of the left heart border. 
+Pleural spaces are clear, right side normal. 
+Sternotomy wires noted",54,Male
+https://litfl.com/CXR-Case-068,CXR-CASE-068-CXR-LITFL.jpg,Frontal,A 72 year old man presents with recurrent falls and pains in his chest.,"There is a lobulated ~5cm tumour just lateral to and above the left hilum. 
+There are several healing fractures to the left ribs (8th and 9th) on the left side. The left clavicle has some deformity indicating a healed fracture.",72,Male
+https://litfl.com/CXR-Case-069,CXR-CASE-069-CXR-LITFL.jpg,Frontal,A 67 year old male presents with worsening left shoulder and arm pains.,"There is infiltration of the left apex with a large soft tissue mass with rib destruction/invasion. 
+Lung fields appear over-inflated consistent with COPD.",67,Male
+https://litfl.com/CXR-Case-070,CXR-CASE-070-CXR-LITFL.jpg,Frontal,A 58 year old man presents with transient chest pain. Routine CXR as part of work up for suspected pulmonary embolus,"There is a rounded small soft tissue mass in the left lower zone. 
+Otherwise, lung fields are clear, heart size normal, pleura clear.",58,Male
+https://litfl.com/CXR-Case-071,CXR-CASE-071-CXR-LITFL.jpg,Frontal,A 81 year old male presents with progressive cough and occasional wheeze.,"There is a large soft tissue mass arising from the right superior mediastiunum. 
+The right hilum appears bulky. Both lung fields are over-inflated consistent with COPD.",81,Male
+https://litfl.com/CXR-Case-072,CXR-CASE-072-CXR-LITFL.jpg,Frontal,"A 53 year old man is sent into emergency from the respiratory clinic, without notes, acutely short of breath clutching an XR ","There are surgical wires over the left 5th and 6th ribs and surgical clips lateral to the left hilum. 
+The lung fields project differently – the right is suggestive of gas trapping and oligaemia; the left has normal appearances of the pulmonary vasculature.",53,Male
+https://litfl.com/CXR-Case-073,CXR-CASE-073-CXR-LITFL.jpg,Frontal,A 73 year old female presents with chronic cough and weight loss.,"There is a right superior hilar mass. 
+There may be paratracheal adenopathy superior to it. 
+Lung fields and pleura clear
+
+Lateral:
+Lateral confirms that this likely tumour is anterior and superior to the hilum.",73,Female
+https://litfl.com/CXR-Case-073,CXR-CASE-073-Lateral-XR-LITFL.jpg,Lateral,A 73 year old female presents with chronic cough and weight loss.,"There is a right superior hilar mass. 
+There may be paratracheal adenopathy superior to it. 
+Lung fields and pleura clear
+
+Lateral:
+Lateral confirms that this likely tumour is anterior and superior to the hilum.",73,Female
+https://litfl.com/CXR-Case-074,CXR-CASE-074-CXR-LITFL.jpg,Frontal,A 79 year old male presents with haemoptysis and weight loss over 2 months,"There is a large mass in the medial right lung adjacent to the mediastinum. 
+The airway and right inferior pulmonary artery are clearly visualised, suggesting this is posterior to the hilum. 
+Lung fields, pleura and bones otherwise normal.
+
+Lateral:
+Lateral XR confirms the presence of a large mass, posterior to the hilum.",79,Male
+https://litfl.com/CXR-Case-074,CXR-CASE-074-Lateral-CXR-LITFL.jpg,Lateral,A 79 year old male presents with haemoptysis and weight loss over 2 months,"There is a large mass in the medial right lung adjacent to the mediastinum. 
+The airway and right inferior pulmonary artery are clearly visualised, suggesting this is posterior to the hilum. 
+Lung fields, pleura and bones otherwise normal.
+
+Lateral:
+Lateral XR confirms the presence of a large mass, posterior to the hilum.",79,Male
+https://litfl.com/CXR-Case-075,CXR-CASE-075-CXR-LITFL.jpg,Frontal,A 61 year old man is sent in by his GP after having a CXR for persistent cough,"There is a rounded, spiculated opacity projected over the right hila area. 
+Otherwise, lung fields, pleura and bones appear normal.",61,Male
+https://litfl.com/CXR-Case-076,CXR-CASE-076-CXR-LITFL.jpg,Frontal,"A 74 year old man is sent in from general medical clinic with weight loss, anaemia, dyspnoea and malaise.","There are multiple dense opacities of varying size throughout both lung fields. 
+The trachea is deviated to the right suggesting some mediastinal adenopathy. 
+The pleura and bones appear normal.",74,Male
+https://litfl.com/CXR-Case-077,CXR-CASE-077-CXR-LITFL.jpg,Frontal,A 48 year old lady is sent in from respiratory clinic with worsening breathlessness and hypoxaemia.,"There are multiple small nodular lesions bilaterally, with a predominately basal distribution. 
+No pleural involvement.",48,Female
+https://litfl.com/CXR-Case-078,CXR-CASE-078-CXR-LITFL.jpg,Frontal,"A 54 year old man presents in severe respiratory distress with haemoptysis,  and renal failure.","There is widespread, bilateral airspace opacification with air bronchograms. 
+The peripheries are relatively spared. 
+ETT, central venous access and NGT are noted.",54,Male
+https://litfl.com/CXR-Case-079,CXR-CASE-079-CXR-LITFL.jpg,Frontal,"A 43 yo lady presents with pleuritic chest pain and cough. She is hypotensive, warm and dilated peripherally.","There is diffuse consolidation in the left lower lung field. 
+*The left heart border and the diaphragm are maintained (alowing for overlying bowel markings and gas)
+
+Lateral:
+This lateral XR demonstrated lobar consolidation of the apical segment of the left lower lobe",43,Female
+https://litfl.com/CXR-Case-079,CXR-CASE-079-Lateral-CXR-LITFL.jpg,Lateral,"A 43 yo lady presents with pleuritic chest pain and cough. She is hypotensive, warm and dilated peripherally.","There is diffuse consolidation in the left lower lung field. 
+*The left heart border and the diaphragm are maintained (alowing for overlying bowel markings and gas)
+
+Lateral:
+This lateral XR demonstrated lobar consolidation of the apical segment of the left lower lobe",43,Female
+https://litfl.com/CXR-Case-080,CXR-CASE-080-CXR-LITFL.jpg,Frontal,"An 19 year old university student presents with pleuritic right sided chest pain, fever and GI upset.","There is airspace shadowing in the right base with loss of the lateral hemidiaphragm. 
+Otherwise lung fields and pleura are clear.
+
+Lateral:
+Lateral X-Ray confirms right lower lobe, lateral basal segment, consolidation.",19,
+https://litfl.com/CXR-Case-080,CXR-CASE-080-Lateral-CXR-LITFL.jpg,Lateral,"An 19 year old university student presents with pleuritic right sided chest pain, fever and GI upset.","There is airspace shadowing in the right base with loss of the lateral hemidiaphragm. 
+Otherwise lung fields and pleura are clear.
+
+Lateral:
+Lateral X-Ray confirms right lower lobe, lateral basal segment, consolidation.",19,
+https://litfl.com/CXR-Case-081,CXR-CASE-081-CXR-LITFL.jpg,Frontal,You are asked to review this CXR by the ICU. CXR of a 28 year old male ‘ANCA positive’ with renal failure.,"There is patchy, diffuse airspace shadowing in both lung fields, worse on the left side. 
+There is a large tunneled subclavian IV access cannula in situ on the right. 
+No pneumothorax.",28,Male
+https://litfl.com/CXR-Case-082,CXR-CASE-082-CXR-LITFL.jpg,Frontal,A 78 year old man presents with worsening dyspnoea.,"There are bilateral moderate pleural effusions. 
+There is fluid in the horizontal fissure and upper lobe diversion.",78,Male
+https://litfl.com/CXR-Case-083,CXR-CASE-083-CXR-LITFL.jpg,AP,A 79 year old lady is referred in by her GP with worsening cough and breathlessness,"There is a right side pleural effusion and mediastinal shift to the right indication a right lower lobe collapse / volume loss. 
+There is a smaller left pleural effusion. 
+There is upper lobe diversion. 
+No focal lung lesion, bones are normal",79,Female
+https://litfl.com/CXR-Case-084,CXR-CASE-084-CXR-LITFL.jpg,Frontal,A 61 year old lady is sent in by her GP with a fever and dyspnoea,"There is a right sided pleural effusion with an ipsilateral indwelling pleural catheter. 
+There is a right sided hilar / upper lobe spiculated mass. 
+There is an infusaport in situ on the left. 
+Left lung field is normal. 
+Evidence of right sided mastectomy and axillary clearance (surgical clips).",61,Female
+https://litfl.com/CXR-Case-085,CXR-CASE-085-CXR-LITFL.jpg,Frontal,"A 45 year old man presents with 2 weeks of worsening fever, pleuritic chest pain and malaise.","There is a multi-locualted pleural effusion on the right side. 
+Left side is normal.",45,Male
+https://litfl.com/CXR-Case-086,CXR-CASE-086-CXR-LITFL.jpg,Frontal,"A 34 year old man is admitted with 10 days of worsening fever, malaise and chest pain.","There is a diffuse hazy shadowing over the lower left lung field. 
+There is loss of volume in the left lower hemithorax (right heart border shifted to the left) 
+Appearances suggest a loculated posterior-basal effusion.
+
+Lateral:
+Lateral XR demonstrates a large multi-loculated posterior and basal pleural effusion.",34,Male
+https://litfl.com/CXR-Case-086,CXR-CASE-086-Lateral-CXR-LITFL.jpg,Lateral,"A 34 year old man is admitted with 10 days of worsening fever, malaise and chest pain.","There is a diffuse hazy shadowing over the lower left lung field. 
+There is loss of volume in the left lower hemithorax (right heart border shifted to the left) 
+Appearances suggest a loculated posterior-basal effusion.
+
+Lateral:
+Lateral XR demonstrates a large multi-loculated posterior and basal pleural effusion.",34,Male
+https://litfl.com/CXR-Case-087,CXR-CASE-087-CXR-LITFL.jpg,Frontal,A 67 yo lady is transferred from St Elsewhere in respiratory distress,"There is collapse and consolidation of the left lung, with tracheal and mediastinal deviation. 
+* There is a large bore chest drain in situ toward the left apex and surgical emphysema on the left side.",67,Female
+https://litfl.com/CXR-Case-088,CXR-CASE-088-CXR-LITFL.jpg,Frontal,This 43 year old man was discharged from hospital 1 week ago having been treated for pneumonia,"There is left sided consolidation and loculated air within a complex pleural effusion which surrounds the hemithorax. 
+There is a left hydro-pneumothorax. Right lung field is clear.",43,Male
+https://litfl.com/CXR-Case-089,CXR-CASE-089-CXR-LITFL.jpg,Frontal,A 56 year old lady is referred to the medics with gradually worsening dyspnoea and weight loss.,"There is a large right sided pleural effusion filling the entire hemithorax. 
+Left lung field and pleura is clear. 
+Large gastric bubble.",56,Female
+https://litfl.com/CXR-Case-090,CXR-CASE-090-CXR-LITFL.jpg,Frontal,,"There is a large bore chest drain on the right with surgical emphysema and a hydropneumothorax. 
+The chest drain tip is situated towards the apex (or cupola) of the hemithorax.",56,Female
+https://litfl.com/CXR-Case-091,CXR-CASE-091-CXR-LITFL.jpg,Frontal,"A 59 year old man presents with cough, haemoptysis, dyspnoea and fever for 3 days","There is airspace shadowing with air bronchograms in the left upper lobe. 
+The right lung and pleural spaces are clear.",59,Male
+https://litfl.com/CXR-Case-092,CXR-CASE-092-CXR-LITFL.jpg,PA,"A 42 year old man is sent in for CXR by his GP. He has a 5 day history of worsening cough, aches and chills.","There is a rounded opacity projected over the right hilum with some slight increased airspace shadowing in the right middle lobe. 
+Rounded artefact over the left 6th posterior rib.
+
+Lateral:
+Lateral X-Ray demonstrates loculated fluid within the horizontal fissure and inflammatory changes in the middle lobe.",42,Male
+https://litfl.com/CXR-Case-092,CXR-CASE-092-Lateral-CXR-LITFL.jpg,Lateral,"A 42 year old man is sent in for CXR by his GP. He has a 5 day history of worsening cough, aches and chills.","There is a rounded opacity projected over the right hilum with some slight increased airspace shadowing in the right middle lobe. 
+Rounded artefact over the left 6th posterior rib.
+
+Lateral:
+Lateral X-Ray demonstrates loculated fluid within the horizontal fissure and inflammatory changes in the middle lobe.",42,Male
+https://litfl.com/CXR-Case-093,CXR-CASE-093-CXR-LITFL.jpg,PA,A 37 year old man is transferred from a peripheral hospital with acute shortness of breath.,"There is diffuse, hazy shadowing in the right lower lung field with an indistinct lateral right hemidiaphragm and fluid in the horizontal fissure.",37,Male
+https://litfl.com/CXR-Case-094,CXR-CASE-094-CXR-LITFL.jpg,Frontal,"44 year old lady admitted with worsening dyspnoea, right sided chest pain, haemoptysis and weight loss of 10kgs in 8 weeks.","There is a partially loculated right pleural effusion. 
+There are increased reticulo-nodular markings throughout the left lung field. 
+Left pleural space clear, bones appear normal.",44,Female
+https://litfl.com/CXR-Case-095,CXR-CASE-095-CXR-LITFL.jpg,Frontal,A 71 year old man retired plumber is admitted from respiratory clinic,"There is a right sided hydropneumothorax with lobulated pleural thickening over the lateral and posterior chest wall. 
+The left side of the chest is clear.",71,Male
+https://litfl.com/CXR-Case-096,CXR-CASE-096-CXR-LITFL.jpg,Frontal,You are asked to review this CXR of a 69 year old woman on the medical ward,"There are multiple small opacities of varying size throughout both lung fields. 
+There is a moderate basal and posterior pleural effusion and circumferential pleural thickening around the right hemithorax with a pig tail drain in situ.",69,Female
+https://litfl.com/CXR-Case-097,CXR-CASE-097-CXR-LITFL.jpg,Frontal,"A 64 year old lady presents to the respiratory team with a 3 month history of progressive dyspnoea, chest pain and weight loss.","There is encasement of the right lung from pleural thickening in the right hemithorax with volume loss. 
+The left pleura is normal. There is a nipple shadow on the left.",64,Female
+https://litfl.com/CXR-Case-098,CXR-CASE-098-CXR-LITFL.jpg,Frontal,A 22 year old known IV drug user is found collapsed and admitted hypotensive with altered consciousness.,"There is left upper lobe consolidation with air bronchograms indicating pneumonia. 
+Linear shadows on the right lower lobe suggest atelectasis. 
+ETT and NGT in situ.",22,
+https://litfl.com/CXR-Case-099,CXR-CASE-099-CXR-LITFL.jpg,AP,"41 year old male. Motor vehicle accident 30 minutes ago. Driver, no airbag, bent steering wheel. Alert complaining of chest pain.","There is a left pneumothorax with mediastinal shift suggesting a tension. 
+No obvious rib fracture(s).",41,Male
+https://litfl.com/CXR-Case-100,CXR-CASE-100-CXR-LITFL.jpg,AP,A 39 year old man presents with sudden onset right sided pleuritic pain. He smokes marijuana. SpO2 on air 96%,"There is a large right sided pneumothorax. 
+No evidence of trauma. 
+The left lung looks congested but no obvious parenchymal disease.",39,Male
+https://litfl.com/CXR-Case-101,CXR-CASE-101-CXR-LITFL.jpg,Frontal,A 35 year old man presents to ED with 2 days of left sided pleuritic chest pain and slight dyspnoea on climbing the stairs.,"There is a large left pneumothorax, with partial inflation of the upper lobe apparent in the mid zone, and the edges of the lingula and lower lobe can be visualised in the lower zone. 
+The right lung parenchyma appears normal",35,Male
+https://litfl.com/CXR-Case-102,CXR-CASE-102-CXR-LITFL.jpg,Frontal,"A 28 yo man presents with sudden onset left sided sharp chest pain. P 85, RR 14, SpO2 on air 98%","There is an apical left sided pneumothorax. 
+No evidence of parenchymal lung disease.",28,Male
+https://litfl.com/CXR-Case-103,CXR-CASE-103-CXR-LITFL.jpg,Frontal,26 year old man. Low speed driver of motorbike vs. car. Initial primary survey complete with soft tissue grazes on limbs only. Now increasingly agitated with falling BP.,"There is a right tension pneumothorax with displacement of the mediastinum to the left. 
+There is a right sided air fluid level suggesting haemothorax. 
+No obvious rib or clavicular fractures.",26,Male
+https://litfl.com/CXR-Case-104,CXR-CASE-104-CXR-LITFL.jpg,Frontal,27 year old female presents with 1 day of breathlessness that occurred spontaneously.,"There is a right sided pneumothorax with collapse of the upper and lower lobes. 
+Visualised lung parenchyma looks normal..",27,Female
+https://litfl.com/CXR-Case-105,CXR-CASE-105-CXR-LITFL.jpg,Frontal,A 71 year old man presents with sudden onset breathlessness. Background history of slowly worsening dyspnoea and left sided chest ache over the last 6 weeks.,"There is a left sided hydro-pneumothorax. 
+No obvious pleural or lung parenchymal disease.",71,Male
+https://litfl.com/CXR-Case-106,CXR-CASE-106-CXR-LITFL.jpg,Frontal,54 year old man presents with worsening breathlessness over 2 days. He is a current smoker and has had periodic breathlessness and wheeze for 4 or 5 years.,"There is a small right pneumothorax in the right upper zone. 
+The lung parenchyma looks normal, pleural spaces are clear.",54,Male
+https://litfl.com/CXR-Case-107,CXR-CASE-107-CXR-LITFL.jpg,Frontal,A 51 year old man known to the respiratory team is admitted with a sudden onset of significantly worse dyspnoea. He is hypoxic requiring 4L of oxygen to maintain SpO2 ~94%.,"There are bilateral pneumothoraces. 
+There are increased lung markings suggestive of underlying lung parenchyma infiltrate such as pulmonary fibrosis. 
+Bilateral small pleural effusions.",51,Male
+https://litfl.com/CXR-Case-108,CXR-CASE-108-CXR-LITFL.jpg,Frontal,"A 49 year old lady who is a current smoker presents with cough, dyspnoea and fever.","There is a mass-like area of increased airspace shadowing in the right upper zone, in continuity with the mediastinum. 
+The right upper lobe bronchus is visualised running through it. 
+The horizontal fissure appears more prominent than normal. 
+The pleural spaces are clear, the left side appears normal.
+
+Lateral:
+The opacification more clearly abuts the horizontal fissure and sits in the posterior segment of the right upper lobe.",49,Female
+https://litfl.com/CXR-Case-108,CXR-CASE-108-Lateral-CXR-LITFL.jpg,Lateral,"A 49 year old lady who is a current smoker presents with cough, dyspnoea and fever.","There is a mass-like area of increased airspace shadowing in the right upper zone, in continuity with the mediastinum. 
+The right upper lobe bronchus is visualised running through it. 
+The horizontal fissure appears more prominent than normal. 
+The pleural spaces are clear, the left side appears normal.
+
+Lateral:
+The opacification more clearly abuts the horizontal fissure and sits in the posterior segment of the right upper lobe.",49,Female
+https://litfl.com/CXR-Case-109,CXR-CASE-109-CXR-LITFL.jpg,Frontal,"An 83 year old man is admitted with a fall and confusion. He is hypoxaemic on air, requiring 2L of oxygen via nasal prongs.","There is subtle upper lobe diversion and bilateral small pleural effusions. 
+Lower zones bilaterally have possible patchy airspace opacification. 
+There is a single chamber pacemaker and a metallic mitral valve replacement. 
+Right shoulder prosthesis noted.",83,Male
+https://litfl.com/CXR-Case-110,CXR-CASE-110-CXR-LITFL.jpg,AP,"An 86 year old lady is admitted breathless, hypoxaemic and hypotensive with a systolic of 95mmHg","Even allowing for an AP film there is likely cardiomegaly. 
+There is upper lobe diversion, fluid in both pleural spaces and the horizontal fissure and Kerley B lines. 
+The arch of the aorta is calcified and may be aneursymal. 
+The left diaphragm is obscured suggesting lower lobe collapse or pleural fluid.",86,Female
+https://litfl.com/CXR-Case-111,CXR-CASE-111-CXR-LITFL.jpg,Frontal,"A 55 year old man is transferred to emergency following a collapse at a sporting event. Paramedics were unable to record oxygen saturation on scene, a bystander thinks there was a pulse throughout.","There is widespread, bilateral upper lobe predominant airspace opacification. 
+Heart size appears normal. 
+An ETT is present and in a satisfactory position.",55,Male
+https://litfl.com/CXR-Case-112,CXR-CASE-112-CXR-LITFL.jpg,Frontal,A 77 yo old lady with a history of ischaemic heart disease is admitted to the ER with symptoms of increasing breathlessness and cough.,"There is a possible left pleural effusion or pleural thickening with a band of atelectasis in the left base. 
+There may be bronchial wall thickening in the left lower lobe behind the heart. 
+The rest of the lung parenchyma is clear. 
+There is a dual chamber PPM and wires from a sternotomy. 
+There is also a metallic AVR.",77,Female
+https://litfl.com/CXR-Case-113,CXR-CASE-113-CXR-LITFL.jpg,Frontal,"A 23 year old man is referred to ICU with worsening fever, confusion and hypotension. He has a well healed mid-line sternotomy scar.","Both lung fields have patchy airspace shadowing in the mid zones. 
+The heart size is likely to be enlarged; there are sternotomy wires in situ and surgical clips in the mediastium and/or heart. 
+There is a left sided PICC line in situ.",23,Male
+https://litfl.com/CXR-Case-114,CXR-CASE-114-CXR-LITFL.jpg,Frontal,"A 19 year old lady P1,G1 presents with increasingly severe left lower quadrant abdominal pain. Pregnancy test is negative","The heart is on the right side representing dextrocardia. 
+Situs inversus is present (gastric bubble also on the right side). 
+No free air under the diaphragm. 
+No evidence of any bronchiectasis.",19,Female
+https://litfl.com/CXR-Case-115,CXR-CASE-115-CXR-LITFL.jpg,Frontal,A 79 year old man is sent in by his GP following a 48 hour history of cough with right sided pleuritic chest pain.,"There is airspace shadowing and air bronchograms in the right upper lobe. 
+The pleura look clear, heart size normal.",79,Male
+https://litfl.com/CXR-Case-116,CXR-CASE-116-CXR-LITFL.jpg,Frontal,"A 63 year old man presents with productive cough, fever and breathlessness. He presents to the emergency department following two episodes of haemoptysis","There is patchy airspace shadowing over the medial aspect right mid zone. 
+The hila structures are still visualised. 
+The remaining parenchyma and pleura are clear.
+
+Lateral:
+There is lobar consolidation of the right apical segment, lower lobe.",63,Male
+https://litfl.com/CXR-Case-116,CXR-CASE-116-Lateral-CXR-LITFL.jpg,Lateral,"A 63 year old man presents with productive cough, fever and breathlessness. He presents to the emergency department following two episodes of haemoptysis","There is patchy airspace shadowing over the medial aspect right mid zone. 
+The hila structures are still visualised. 
+The remaining parenchyma and pleura are clear.
+
+Lateral:
+There is lobar consolidation of the right apical segment, lower lobe.",63,Male
+https://litfl.com/CXR-Case-117,CXR-CASE-117-CXR-LITFL.jpg,Frontal,"A 71 yo man with known previous COPD presents with 3 days of worsening cough, fevers and dyspnoea.","There is patchy airspace shadowing in the left upper lobe, more dense inferiorly. 
+There is some volume loss on the left and multiple more lucent rounded areas representing non-consolidated emphysema. 
+Remaining parenchyma and pleura are normal.",71,Male
+https://litfl.com/CXR-Case-118,CXR-CASE-118-CXR-LITFL.jpg,Frontal,An 81 year old man is found hypoxaemic and confused by paramedics.,"There is airspace shadowing in the right upper lobe with some volume loss. 
+The right hemi-diaphragm is raised anteriorly. 
+There is a single chamber pace maker in situ. 
+Left lung field appears hyper-inflated consistent with air trapping from COPD.
+
+Lateral:
+The lateral CXR confirms consolidation within the posterior segment right upper lobe.",81,Male
+https://litfl.com/CXR-Case-118,CXR-CASE-118-Lateral-CXR-LITFL.jpg,Lateral,An 81 year old man is found hypoxaemic and confused by paramedics.,"There is airspace shadowing in the right upper lobe with some volume loss. 
+The right hemi-diaphragm is raised anteriorly. 
+There is a single chamber pace maker in situ. 
+Left lung field appears hyper-inflated consistent with air trapping from COPD.
+
+Lateral:
+The lateral CXR confirms consolidation within the posterior segment right upper lobe.",81,Male
+https://litfl.com/CXR-Case-119,CXR-CASE-119-CXR-LITFL.jpg,Frontal,A 67 year old lady is admitted from respiratory clinic with cough and haemoptysis. She is a never-smoker.,"There is a right sided mass in the superior mediastinum with loss of clarity of the tracheal border. 
+Right hilum is possibly bulky. 
+Parenchyma and pleura are clear. Bones normal.",67,Female
+https://litfl.com/CXR-Case-120,CXR-CASE-120-CXR-LITFL.jpg,Frontal,A 54 year old man is admitted with worsening breathlessness and cough with pain in the right chest for 6 weeks.,"There are airspace infiltrates in the right upper lobe (posterior segment) and right lower lobe. 
+There is a right pleural effusion and diffuse pleural thickening with volume loss in the right hemithorax. 
+Left side of chest is normal.",54,Male
+https://litfl.com/CXR-Case-121,CXR-CASE-121-CXR-LITFL.jpg,Frontal,"An 18 year old man presents to ED after a heavy night out, vomiting profusely. He presents to ED with chest pain and swelling in his neck.","There is pneumomediastinum and surgical emphysema in the neck tissues. 
+No pneumothorax visible, normal pleura. 
+Lung parenchyma looks normal. No evidence of trauma.",18,Male
+https://litfl.com/CXR-Case-122,CXR-CASE-122-CXR-LITFL.jpg,Frontal,A 64 year old man is extubated following surgery for an ankle fracture. He suffers from mild COPD and is now coughing persistently.,"There is pneumopericardiaum, pneumomediastinum and surgical emphysema in the neck tissues. 
+No pneumothorax visible.",64,Male
+https://litfl.com/CXR-Case-123,CXR-CASE-123-CXR-LITFL.jpg,AP,A 71 year old man with known emphysema / COPD presents in type II respiratory failure and is started on NIV.,"The large bowel is occupying most of the left hemithorax and mediastinum. The lung field on the right is over inflated consistent with COPD. 
+There are multiple small, calcified micro-nodules in the right upper lobe consistent with old TB.",71,Male
+https://litfl.com/CXR-Case-124,CXR-CASE-124-CXR-LITFL.jpg,Frontal,An 84 year old lady is referred in by her GP with cough low grade fever.,"There is a large hiatus hernia and air fluid level within the stomach. 
+There is consolidation in the right base. 
+Otherwise lung parenchyma and pleura are normal.",84,Female
+https://litfl.com/CXR-Case-125,CXR-CASE-125-CXR-LITFL.jpg,Frontal,78 year old female with unexplained syncope has a routine CXR,"There is a calcified, unfolded aorta and large hiatus hernia. 
+The trachea is slightly deviated to the right. 
+Both costophrenic angles are obscured and there is a trace of fluid in the horizontal fissure.",78,Female
+https://litfl.com/CXR-Case-126,CXR-CASE-126-CXR-LITFL.jpg,Frontal,A 55 year old man lost control while cycling ~20km/hr – and strikes a sign post. On arrival to ED he is complaining pain down left side of his torso.,"There is a fracture of the 2nd rib on the left and lost of the left costophrenic angle consistent with a small haemothorax. 
+The mid-portion of the left scapula may have a fracture in addition.",55,Male
+https://litfl.com/CXR-Case-127,CXR-CASE-127-CXR-LITFL.jpg,Frontal,A 34 year old lady presents following a mechanical fall onto pavement. She presents to ED complaining of left sided chest pain.,"There are rib fractures of the 7th and 8th ribs posteriorly on the left side. 
+There is a healed / healing fracture of the right 5th rib. 
+On the lateral aspect of the left upper zone there is a rounded partially calcified lesion in continuity with the 2nd rib. 
+Bilateral nipple shadows. Clear pleura and lung parenchyma.",34,Female
+https://litfl.com/CXR-Case-128,CXR-CASE-128-CXR-LITFL.jpg,Frontal,An 81 year old man presents with chest pain.,"There are widespread, bilateral calcified asbestos-related pleural plaques. 
+These are affecting the diaphragm and medisatinal pleura as well as (more commonly) the lateral parietal pleura. 
+Lung parenchyma is normal.",81,Male
+https://litfl.com/CXR-Case-129,CXR-CASE-129-CXR-LITFL.jpg,Frontal,A 29 year old man with a history of deafness presents with a self terminating seizure.,"There is a large rounded pleural based opacity in the right upper zone of the chest. 
+*There is also increased opacity in the right lung apex, behind the clavicle",29,Male
+https://litfl.com/CXR-Case-130,CXR-CASE-130-CXR-LITFL.jpg,AP,A 31 year old builder falls approximately 2m onto a concrete block. He attends the emergency department complaining of severe right sided chest pain.,"There are fractures to the right 7th and 8th ribs. 
+Right sided pneumothorax with increased parenchymal infiltrates right lower zone. 
+Pleura looks clear. 
+Surgical emphysema over right lateral chest. Left side normal.",31,Male
+https://litfl.com/CXR-Case-131,CXR-CASE-131-CXR-LITFL.jpg,Frontal,A 79 year old man is extubated on ICU after routine surgery.,"There is a large endovascular aortic stent in situ. 
+The lung parenchyma look normal. 
+Trace of fluid in the horizontal fissure.",79,Male
+https://litfl.com/CXR-Case-132,CXR-CASE-132-CXR-LITFL.jpg,Frontal,"A 71 year old lady presents with chest pain radiating to her back. Initial BP 95/60, repeat on other arm 105/65, pulse 100/min regular, RR 16 /min.","There is aneurysmal dilation and unfolding of the thoracic aorta. 
+Heart size is possibly enlarged. Left base is indistinct raising possibility of a pleural effusion.",71,Female
+https://litfl.com/CXR-Case-133,CXR-CASE-133-CXR-LITFL.jpg,AP,"A 36 year old lady is airlifted from the beach having been caught in a rip and taken out to sea. RR 28, SpO2 99% with high flow O2. Initially confused on scene, now alert.","Bilateral predominantly mid-zone airspace shadowing. 
+Fluid in the horizontal fissure. 
+Very large gastric bubble. 
+Multiple monitoring leads including AED pads.",36,Female
+https://litfl.com/CXR-Case-133,CXR-CASE-133-CXR-12hours-LITFL.jpg,AP,"A 36 year old lady is airlifted from the beach having been caught in a rip and taken out to sea. RR 28, SpO2 99% with high flow O2. Initially confused on scene, now alert.","This CXR was 12 hours after admission. 
+There is significant improvement in the parenchymal infiltrates, however, they are still prominent. 
+Fluid remains in the fissure and perhaps the right costophrenic angle.",36,Female
+https://litfl.com/CXR-Case-134,CXR-CASE-134-CXR-LITFL.jpg,Frontal,An 86 year old man is admitted to ED with cough and breathlessness.,"There are endovascular stents in situ in the right brachiocephalic artery and right axillary artery. 
+Fluid in the horizontal fissure. 
+There are patchy changes in both lower lung fields and some left pleural thickening.",86,Male
+https://litfl.com/CXR-Case-135,CXR-CASE-135-CXR-LITFL.jpg,Frontal,41 year old lady has a routine pre-op CXR (gotta love the olden days).,"There is an azygos lobe in the right upper zone. 
+Normal parenchyma and pleura.",41,Female
+https://litfl.com/CXR-Case-136,CXR-CASE-136-CXR-LITFL.jpg,Frontal,Gun shot wound to the right lateral abdomen. No exit wound noted. RR 18; P – 110; BP 102/55; GCS 15,"Lung fields are clear. 
+No pneumothorax or effusions. 
+* The is a 7.62 bullet projected inferior to the medial right hemidiaphragm. 
+* A lateral XR or CT is needed to localise the position more acuately.",20,
+https://litfl.com/CXR-Case-137,CXR-CASE-137-CXR-LITFL.jpg,Frontal,"70 year old lady presents with collapse at home. On arrival GCS 5, O2 sats 70% on 15 liters and shifting minimal air on auscultation. Respiratory arrest whilst in upright position – breathing returned on lying supine. NIDDM with degenerative OA of knees on metformin and meloxicam","Small lung volumes and atelectasis in the right base. 
+No consolidation. 
+There is air under the right hemi-diapragm and the liver appears displaced downwards.",70,Female
+https://litfl.com/CXR-Case-138,CXR-CASE-138-CXR-LITFL.jpg,Frontal,Routine post procedure CXR on ICU.,"The nasogastric tube (NGT) passes into the trachea and then left main bronchus, it then loops around and crosses into the right main bronchus, where it again loops on itself. 
+Tracheostostomy tube in situ.",50,
+https://litfl.com/CXR-Case-139,CXR-CASE-139-CXR-LITFL.jpg,Frontal,A 53 year old man is intubated in ED for respiratory distress and hypoxaemia.,"There is collapse of the left lung with some likely background consolidation. 
+The tip of the endotracheal tube (ETT) is in the right main bronchus. 
+NG tube is correctly in situ. 
+Right lung parenchyma and pleura look clear.",53,Male
+https://litfl.com/CXR-Case-140,CXR-CASE-140-CXR-LITFL.jpg,Frontal,A 39 yo lady is sewing and frees her had to answer her phone by placing a needle between her lips. On being told some humorous news she inhales sharply…,"There is a needle projecting over the right heart border in the right lower zone. 
+Otherwise a normal film.
+
+Lateral:
+The needle appears to be in the right lower lobe, medial segment airway.",39,Female
+https://litfl.com/CXR-Case-140,CXR-CASE-140-Lateral-CXR-LITFL.jpg,Frontal,A 39 yo lady is sewing and frees her had to answer her phone by placing a needle between her lips. On being told some humorous news she inhales sharply…,"There is a needle projecting over the right heart border in the right lower zone. 
+Otherwise a normal film.
+
+Lateral:
+The needle appears to be in the right lower lobe, medial segment airway.",39,Female
+https://litfl.com/CXR-Case-141,CXR-CASE-141-CXR-LITFL.jpg,AP,"A 60 year old lady with COPD and bronchiectasis presents with severe abdominal pain and breathlessness. RR 22, BP 102/62, P 110, SpO2 96% on air.","There is air under both hemi-diaphragms suggesting a perforated viscus. 
+Bilateral patchy shadowing and atelectasis in both lung bases. 
+Chronic bronchiectatic changes right base.",60,Female
+https://litfl.com/CXR-Case-142,CXR-CASE-142-CXR-LITFL.jpg,Frontal,75 year old female admitted for investigation of weight loss and dysphagia. CXR requested after patient developed a worsening cough following an investigative procedure.,"There is barium within both lower lobes, worse on the right. Some barium has reached the gastrointestinal tract. 
+There is an NG tube in situ and a left renal / ureteric stent.",70,
+https://litfl.com/CXR-Case-143,CXR-CASE-143-CXR-LITFL.jpg,Frontal,70 year old man admitted from respiratory clinic with cough and dyspnoea.,"There is volume loss on the right side as a result of the right upper lobectomy (mediastinal surgical clips). 
+There airspace shadowing in the right upper zone and blunting of the right costophrenic angle. 
+Left lung parenchyma and pleura are clear.",70,Male
+https://litfl.com/CXR-Case-144,CXR-CASE-144-CXR-LITFL.jpg,Frontal,A 78 year old lady is admitted from gastroenterology clinic with worsening productive cough.,"There is an oesophageal stent in situ with an naso-jejunal tube. 
+There are surgical clips in the left lower mediastiunum indicating a previous lobectomy. 
+Further surgical clips in the right upper quadrant, presumably from cholecystectomy. 
+There are patchy, probably inflammatory changes in both lung fields, with some pleural reaction in the right base.",78,Female
+https://litfl.com/CXR-Case-145,CXR-CASE-145-CXR-LITFL.jpg,Frontal,"Motor vehicle accident, driver of car vs. tree. Male. Severe respiratory distress on scene – presumed tension pneumothorax on left decompressed with a 14G cannula and intubated on scene.","The tip of the ET tube is in the right main bronchus. 
+There is a large bore chest drain on the left side, the tip appears to sit in the medial costophrenic angle. 
+NG tube correctly placed. 
+No pneumothorax visible, lung parenchyma look normal. 
+There may be a thin rim of air under the left hemi-diaphram – a supine film or CT is required. 
+The apices of the lungs are not properly visualised.",50,Male
+https://litfl.com/CXR-Case-146,CXR-CASE-146-CXR-LITFL.jpg,Frontal,A 75 year old lady presents with worsening cough.,"There is right apical and lateral pleural thickening and volume loss of the right upper lobe causing mediastinal shift. 
+Bilateral breast implants.",75,Female
+https://litfl.com/CXR-Case-147,CXR-CASE-147-CXR-LITFL.jpg,Frontal,A 67 year old man is admitted with ?TIA. Routine CXR.,There is white out of the left hemithorax with pronounced mediastinal shift to the left and raised left hemi-diaphragm. Right lung parenchyma is normal.,67,Male
+https://litfl.com/CXR-Case-148,CXR-CASE-148-CXR-LITFL.jpg,Frontal,A 32 year old male presents from respiratory clinic with worsening productive cough.,"The lung parenchyma are clear, although there are prominent vasculature. 
+There are multiple surgical clips throughout the mediastinum, and two sternal wires.",32,Male
+https://litfl.com/CXR-Case-149,CXR-CASE-149-CXR-LITFL.jpg,Frontal,77 year old male presents with central chest pain.,"The lung parenchyma are clear. 
+There are prominent anterior domes of the hemidiaphragms, most notable on the left. 
+There are mid-line sternotomy wires and a MVR.",77,Male
+https://litfl.com/CXR-Case-150,CXR-CASE-150-CXR-LITFL.jpg,AP,"A 69 yo lady presents with a fall, productive cough, fever and dyspnoea","There is marked tracheal and mediastinal deviation to the left, reflecting collapse and volume loss of the left lower lobe. 
+* There are air bronchograms visible in the left mid zone suggesting consolidation 
+* There is a small left apical rim of air, probably a small pneumothorax",69,Female
