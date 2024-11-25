@@ -28,7 +28,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumonia Grading and Image Viewer with GitHub Integration")
+st.title("Pneumonia Grading ")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
