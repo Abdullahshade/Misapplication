@@ -10,7 +10,7 @@ Id,Ground_Truth,Pneumonia_Grading,Percentage of Grade,Image_good,Labeled
 38909281,1,,,,
 255411092,1,,,,
 221912234,1,,,,
-200725658,1,,,,
+200725658,1,Moderate,44%,,
 605689867,0,,,,
 422941988,1,,,,
 485016781,0,,,,
