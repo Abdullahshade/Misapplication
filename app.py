@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from github import Github
-import os
 
 # Authenticate with GitHub
-GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]  # Ensure you have a GITHUB_TOKEN secret in Streamlit
+GITHUB_TOKEN = st.secrets["GITHUB"]["GITHUB_TOKEN"]  # Securely access the secret token
 g = Github(GITHUB_TOKEN)
 
 # Define repository and file paths
