@@ -1,87 +1,132 @@
-import os
-import sqlite3
 import streamlit as st
+import pandas as pd
 from PIL import Image
-from pathlib import Path
+import sqlite3
 
-# Ensure the correct path for the database and images folder
-current_dir = Path(__file__).parent
+# SQLite Database setup
+def create_connection():
+    conn = sqlite3.connect('pneumonia_grading.db')  # Connect to SQLite database (or create it)
+    return conn
 
-# For the database path, ensure it points to the file in the current directory
-db_path = os.path.join(current_dir, 'pneumonia_grading.db')
-images_folder = os.path.join(current_dir, 'Images')
+def create_table():
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS grades (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            image_id TEXT,
+            pneumonia_grading TEXT,
+            percentage_grade INTEGER,
+            ground_truth INTEGER
+        )
+    ''')
+    conn.commit()
+    conn.close()
 
-# Check if the database exists
-if not os.path.exists(db_path):
-    st.error("Database file is missing. Please upload it.")
-else:
-    st.success("Database file found!")
+def get_data():
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('SELECT * FROM grades')
+    data = c.fetchall()
+    conn.close()
+    return data
 
-# Function to load the images from the Images folder
-def load_images(image_dir):
-    # Check if the Images folder exists
-    if os.path.exists(image_dir):
-        images = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith(('jpg', 'jpeg', 'png'))]
-        return images
-    else:
-        st.warning("Images folder is missing.")
-        return []
+def update_data(image_id, grading, percentage_grade):
+    conn = create_connection()
+    c = conn.cursor()
+    c.execute('''
+        UPDATE grades SET pneumonia_grading = ?, percentage_grade = ?
+        WHERE image_id = ?
+    ''', (grading, percentage_grade, image_id))
+    conn.commit()
+    conn.close()
 
-# Display images
-def display_images(images):
-    if images:
-        for img_path in images:
-            image = Image.open(img_path)
-            st.image(image, caption=os.path.basename(img_path), use_column_width=True)
-    else:
-        st.warning("No images to display.")
+# Create table if it doesn't exist
+create_table()
 
-# Streamlit UI
+# Path to the updated metadata CSV and images folder
+metadata_file = "Updated_GTruth_with_Grading.csv"  # Update the path to your CSV file
+images_folder = "Images"  # Folder where images are stored
+
+# Load the updated metadata from SQLite (instead of CSV)
+data = get_data()
+
+# App title
 st.title("Pneumonia Grading and Image Viewer")
 
-# Upload Database File (optional if you want manual upload)
-db_file = st.file_uploader("Upload Database File (if missing)", type=["db", "sqlite"])
-if db_file is not None:
-    with open(db_path, "wb") as f:
-        f.write(db_file.read())
-    st.success(f"Database file {db_file.name} uploaded successfully.")
+# Initialize session state for the current index
+if "current_index" not in st.session_state:
+    st.session_state.current_index = 0
 
-# Upload Images (optional if you want manual upload)
-uploaded_files = st.file_uploader("Upload Images", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
-if uploaded_files:
-    for uploaded_file in uploaded_files:
-        image_path = os.path.join(images_folder, uploaded_file.name)
-        with open(image_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-    st.success(f"Uploaded {len(uploaded_files)} images.")
+# Debugging: Check how many rows are in the data
+st.write(f"Total images available: {len(data)}")
 
-# Load and Display Images
-images = load_images(images_folder)
-display_images(images)
+# Get the current row from the database
+current_index = st.session_state.current_index
 
-# Database Connection and Grading Logic
-def connect_db(db_path):
-    try:
-        conn = sqlite3.connect(db_path)
-        return conn
-    except sqlite3.Error as e:
-        st.error(f"Error connecting to the database: {e}")
-        return None
+if len(data) > 0:
+    if current_index < len(data):
+        row = data[current_index]
+        image_id = row[1]  # Assuming image_id is in the second column
+        grading = row[2]  # Grading in the third column
+        percentage_grade = row[3]  # Percentage grade in the fourth column
+        ground_truth = row[4]  # Ground truth in the fifth column
 
-conn = connect_db(db_path)
-if conn:
-    cursor = conn.cursor()
+        # Debugging: Check the current index and image ID
+        st.write(f"Displaying image with index {current_index} and image ID {image_id}")
 
-    # Example query: Grading and displaying data from database (Modify this with your actual query logic)
-    cursor.execute("SELECT * FROM pneumonia_grading")
-    rows = cursor.fetchall()
+        # Display the image
+        image_path = f"{images_folder}/{image_id}.jpeg"  # Assuming 'image_id' corresponds to the image filename (with .jpeg extension)
+        try:
+            st.image(Image.open(image_path), caption=f"Image ID: {image_id}", use_column_width=True)
+        except FileNotFoundError:
+            st.error(f"Image {image_id}.jpeg not found in {images_folder}.")
+        
+        # Show Ground_Truth as pneumonia status
+        if ground_truth == 1:
+            st.write("### Ground Truth: Pneumonia - Yes")
+        else:
+            st.write("### Ground Truth: Pneumonia - No")
+        
+        # Editable fields for metadata (Pneumonia Grading)
+        st.write("### Update Pneumonia Grading:")
+        grading = st.selectbox(
+            "Pneumonia Grading", 
+            options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],  # Added "No Pneumonia" and "Critical"
+            index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(grading if pd.notna(grading) else "No Pneumonia")
+        )
 
-    if rows:
-        st.write("Grading Data:")
-        for row in rows:
-            st.write(row)
+        # Convert the percentage_grade to an integer (remove the '%' symbol if it exists)
+        if isinstance(percentage_grade, str) and '%' in percentage_grade:
+            percentage_grade = int(percentage_grade.replace('%', ''))
+        else:
+            percentage_grade = int(percentage_grade)
+
+        # Add a slider for percentage of grade (from 0 to 100)
+        percentage_grade = st.slider(
+            "Percentage of Grade", 
+            min_value=0, 
+            max_value=100, 
+            value=percentage_grade,  # Ensure the value is an integer
+            step=1
+        )
+
+        # Format the percentage grade as a string with '%' sign
+        formatted_percentage = f"{percentage_grade}%"
+
+        # Save changes to database
+        if st.button("Save Changes"):
+            update_data(image_id, grading, formatted_percentage)
+            st.success(f"Changes saved! Image ID: {image_id}, Grading: {grading}, Percentage of Grade: {formatted_percentage}")
+
     else:
-        st.warning("No grading data available in the database.")
-    conn.close()
+        st.write("No more images available for grading.")
 else:
-    st.error("Unable to connect to the database.")
+    st.write("No data available for grading.")
+
+# Navigation between images
+col1, col2 = st.columns(2)
+if col1.button("Previous") and current_index > 0:
+    st.session_state.current_index -= 1
+elif col2.button("Next") and current_index < len(data) - 1:
+    st.session_state.current_index += 1
