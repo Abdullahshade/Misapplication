@@ -27,6 +27,8 @@ try:
     # Remove unnecessary columns
     if "Unnamed: 3" in metadata.columns:
         metadata.drop(columns=["Unnamed: 3"], inplace=True)
+    if "Good_Image" in metadata.columns:  # Drop the Good_Image column
+        metadata.drop(columns=["Good_Image"], inplace=True)
 except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
