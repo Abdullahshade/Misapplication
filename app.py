@@ -4,8 +4,9 @@ from PIL import Image
 from github import Github
 
 # Authenticate with GitHub
-GITHUB_TOKEN = st.secrets["GITHUB"]["GITHUB_TOKEN"]  # Securely access the secret token
+GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 g = Github(GITHUB_TOKEN)
+
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshde/Misapplication"  # Replace with your GitHub repository name
