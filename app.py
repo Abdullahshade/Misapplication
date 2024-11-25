@@ -32,7 +32,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumothorax Grading & Image Quality Assessment")
+st.title("Pneumothorax Grading")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -77,7 +77,7 @@ percentage_grade = st.slider(
 )
 
 # Ask if the image is good
-st.write("### Is this a Good Image?")
+st.write("### Is this a Good Image? Select No if You can't lable the image beacuse the quality ")
 good_image = st.radio(
     "Mark as:",
     options=["Yes", "No"],
