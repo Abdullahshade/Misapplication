@@ -27,8 +27,6 @@ try:
     # Remove unnecessary columns
     if "Unnamed: 3" in metadata.columns:
         metadata.drop(columns=["Unnamed: 3"], inplace=True)
-    if "Good_Image" in metadata.columns:  # Drop the Good_Image column
-        metadata.drop(columns=["Good_Image"], inplace=True)
 except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
@@ -57,12 +55,19 @@ st.write(f"### Ground Truth: Pneumothorax - {status}")
 
 # Editable fields for metadata
 st.write("### Update Pneumothorax Grading:")
+
+# Define grading options and ensure the current grading is valid
+grading_options = ["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"]
+current_grading = row.get("Pneumothorax_Grading")
+
+# Ensure current_grading is valid, or default to "No Pneumothorax"
+if current_grading not in grading_options:
+    current_grading = "No Pneumothorax"
+
 grading = st.selectbox(
     "Pneumothorax Grading",
-    options=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"],
-    index=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"].index(
-        row["Pneumothorax_Grading"] if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
-    )
+    options=grading_options,
+    index=grading_options.index(current_grading)
 )
 
 # Slider for percentage grading
@@ -90,7 +95,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumothorax grading and drop Good_Image column",
+            message="Update metadata with pneumothorax grading",
             content=updated_content,
             sha=contents.sha
         )
