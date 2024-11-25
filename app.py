@@ -3,12 +3,14 @@ import pandas as pd
 from PIL import Image
 import sqlite3
 import os
+import tempfile
 
-# SQLite Database setup
+# SQLite Database setup using tempfile for Streamlit cloud deployments
 def create_connection():
-    # Use Streamlit's temporary directory for SQLite database
-    db_path = os.path.join(st.runtime.scriptrunner.get_script_run_ctx().session_id, 'pneumonia_grading.db')
-    conn = sqlite3.connect(db_path)  # Connect to SQLite database (or create it)
+    # Use tempfile for temporary storage in Streamlit cloud or any persistent local path
+    temp_dir = tempfile.mkdtemp()
+    db_path = os.path.join(temp_dir, 'pneumonia_grading.db')
+    conn = sqlite3.connect(db_path)
     return conn
 
 def create_table():
