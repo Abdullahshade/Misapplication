@@ -27,11 +27,8 @@ except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
 
-# Debugging: Display column names to identify any discrepancies
-st.write("### Columns in the CSV:", metadata.columns.tolist())
-
 # App title
-st.title("Pneumothorax Grading")
+st.title("Pneumonia Grading and Image Viewer with GitHub Integration")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -49,16 +46,20 @@ except FileNotFoundError:
     st.error(f"Image {row['Image_File']} not found in {images_folder}.")
 
 # Show Ground Truth as Pneumothorax status
-status = "Yes" if row.get("Pneumothorax_Status", 0) == 1 else "No"
+status = "Yes" if row["Pneumothorax_Status"] == 1 else "No"
 st.write(f"### Ground Truth: Pneumothorax - {status}")
 
-# Show the existing Pneumothorax Grading
-grading = row.get("Pneumothorax_Grading", "Column Missing")
-if grading == "Column Missing":
-    st.warning("The column 'Pneumothorax_Grading' is missing from the CSV.")
-st.write(f"### Current Grading: {grading}")
+# Editable fields for metadata
+st.write("### Update Pneumothorax Grading:")
+grading = st.selectbox(
+    "Pneumothorax Grading",
+    options=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"],
+    index=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"].index(
+        row["Pneumothorax_Grading"] if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
+    )
+)
 
-# Editable fields for percentage grading
+# Slider for percentage grading
 percentage_grade = row.get("Percentage of Grade", 0)
 if not isinstance(percentage_grade, (int, float)) or pd.isna(percentage_grade):
     percentage_grade = 0  # Default to 0 if invalid data
@@ -73,22 +74,23 @@ percentage_grade = st.slider(
 
 # Save changes
 if st.button("Save Changes"):
-    try:
-        # Update the metadata locally
-        metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
-        metadata.to_csv(metadata_file, index=False)
+    # Update the metadata locally
+    metadata.at[current_index, "Pneumothorax_Grading"] = grading
+    metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
+    metadata.to_csv(metadata_file, index=False)
 
-        # Push changes to GitHub
+    # Push changes to GitHub
+    try:
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with percentage grade",
+            message="Update metadata with pneumothorax grading",
             content=updated_content,
             sha=contents.sha
         )
         st.success("Changes saved locally and successfully pushed to GitHub!")
     except Exception as e:
-        st.error(f"Failed to save changes: {e}")
+        st.error(f"Failed to push changes to GitHub: {e}")
 
 # Navigation between images
 col1, col2 = st.columns(2)
