@@ -10,7 +10,7 @@ Index,Image_File,Pneumothorax_Status,Good_Image,Percentage of Grade,Pneumothorax
 7056,image_9.png,1,,,
 3490,image_10.png,1,,,
 6039,image_11.png,1,,,
-3612,image_12.png,1,,,
+3612,image_12.png,1,Yes,53%,Severe
 3645,image_13.png,1,,,
 397,image_14.png,1,,,
 4360,image_15.png,1,,,
