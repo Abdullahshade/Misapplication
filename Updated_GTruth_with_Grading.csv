@@ -1,5 +1,5 @@
 Id,Ground_Truth,Pneumonia_Grading,Percentage of Grade,Image_good,Labeled
-540270208,0,Mild,39%,1.0,Yes
+540270208,0,Moderate,0%,1.0,Yes
 585452583,1,,12%,,
 341665171,0,,,,
 351876904,0,Severe,76%,,
