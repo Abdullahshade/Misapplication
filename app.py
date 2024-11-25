@@ -1,11 +1,13 @@
-import os
-import sqlite3
 import streamlit as st
+import pandas as pd
 from PIL import Image
-from pathlib import Path
+import sqlite3
+import os
 
 # SQLite Database setup
 def create_connection():
+    # Use Streamlit's temporary directory for SQLite database
+    db_path = os.path.join(st.runtime.scriptrunner.get_script_run_ctx().session_id, 'pneumonia_grading.db')
     conn = sqlite3.connect(db_path)  # Connect to SQLite database (or create it)
     return conn
 
@@ -42,35 +44,17 @@ def update_data(image_id, grading, percentage_grade):
     conn.commit()
     conn.close()
 
-# Display images
-def load_images(image_dir):
-    if os.path.exists(image_dir):
-        images = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith(('jpg', 'jpeg', 'png'))]
-        return images
-    else:
-        st.warning("Images folder is missing.")
-        return []
-
-def display_images(images):
-    if images:
-        for img_path in images:
-            image = Image.open(img_path)
-            st.image(image, caption=os.path.basename(img_path), use_column_width=True)
-    else:
-        st.warning("No images to display.")
-
-# Set up file paths
-current_dir = Path(__file__).parent
-db_path = os.path.join(current_dir, 'pneumonia_grading.db')
-images_folder = os.path.join(current_dir, 'Images')
-
-# Create the database table if it doesn't exist
+# Create table if it doesn't exist
 create_table()
 
-# Load the data from the database
+# Path to the updated metadata CSV and images folder
+metadata_file = "Updated_GTruth_with_Grading.csv"  # Update the path to your CSV file
+images_folder = "Images"  # Folder where images are stored
+
+# Load the updated metadata from SQLite (instead of CSV)
 data = get_data()
 
-# Streamlit UI
+# App title
 st.title("Pneumonia Grading and Image Viewer")
 
 # Initialize session state for the current index
@@ -91,24 +75,27 @@ if len(data) > 0:
         percentage_grade = row[3]  # Percentage grade in the fourth column
         ground_truth = row[4]  # Ground truth in the fifth column
 
-        # Display image
-        image_path = os.path.join(images_folder, f"{image_id}.jpeg")
+        # Debugging: Check the current index and image ID
+        st.write(f"Displaying image with index {current_index} and image ID {image_id}")
+
+        # Display the image
+        image_path = f"{images_folder}/{image_id}.jpeg"  # Assuming 'image_id' corresponds to the image filename (with .jpeg extension)
         try:
             st.image(Image.open(image_path), caption=f"Image ID: {image_id}", use_column_width=True)
         except FileNotFoundError:
             st.error(f"Image {image_id}.jpeg not found in {images_folder}.")
-
+        
         # Show Ground_Truth as pneumonia status
         if ground_truth == 1:
             st.write("### Ground Truth: Pneumonia - Yes")
         else:
             st.write("### Ground Truth: Pneumonia - No")
-
+        
         # Editable fields for metadata (Pneumonia Grading)
         st.write("### Update Pneumonia Grading:")
         grading = st.selectbox(
             "Pneumonia Grading", 
-            options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],
+            options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],  # Added "No Pneumonia" and "Critical"
             index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(grading if pd.notna(grading) else "No Pneumonia")
         )
 
@@ -123,17 +110,18 @@ if len(data) > 0:
             "Percentage of Grade", 
             min_value=0, 
             max_value=100, 
-            value=percentage_grade, 
+            value=percentage_grade,  # Ensure the value is an integer
             step=1
         )
 
         # Format the percentage grade as a string with '%' sign
-        formatted_percentage = f"{percentage_grade}%"
+        formatted_percentage = f"{percentage_grade}%"  # Ensuring percentage format
 
         # Save changes to database
         if st.button("Save Changes"):
             update_data(image_id, grading, formatted_percentage)
             st.success(f"Changes saved! Image ID: {image_id}, Grading: {grading}, Percentage of Grade: {formatted_percentage}")
+
     else:
         st.write("No more images available for grading.")
 else:
@@ -145,19 +133,3 @@ if col1.button("Previous") and current_index > 0:
     st.session_state.current_index -= 1
 elif col2.button("Next") and current_index < len(data) - 1:
     st.session_state.current_index += 1
-
-# Upload Database File (optional if you want manual upload)
-db_file = st.file_uploader("Upload Database File (if missing)", type=["db", "sqlite"])
-if db_file is not None:
-    with open(db_path, "wb") as f:
-        f.write(db_file.read())
-    st.success(f"Database file {db_file.name} uploaded successfully.")
-
-# Upload Images (optional if you want manual upload)
-uploaded_files = st.file_uploader("Upload Images", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
-if uploaded_files:
-    for uploaded_file in uploaded_files:
-        image_path = os.path.join(images_folder, uploaded_file.name)
-        with open(image_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-    st.success(f"Uploaded {len(uploaded_files)} images.")
