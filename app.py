@@ -57,20 +57,11 @@ st.write(f"### Ground Truth: Pneumothorax - {status}")
 
 # Editable fields for metadata
 st.write("### Update Pneumothorax Grading:")
-grading_options = [
-    "No Pneumothorax",
-    "Mild",
-    "Moderate",
-    "Severe",
-    "Critical",
-    "Can't Grade because of Image Quality"
-]
 grading = st.selectbox(
     "Pneumothorax Grading",
-    options=grading_options,
-    index=grading_options.index(
-        row.get("Pneumothorax_Grading", "No Pneumothorax")
-        if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
+    options=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"],
+    index=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"].index(
+        row["Pneumothorax_Grading"] if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
     )
 )
 
@@ -84,15 +75,14 @@ percentage_grade = st.slider(
     min_value=0,
     max_value=100,
     value=int(percentage_grade),
-    step=1,
-    disabled=(grading == "Can't Grade because of Image Quality")  # Disable slider if grading indicates ungradable quality
+    step=1
 )
 
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
     metadata.at[current_index, "Pneumothorax_Grading"] = grading
-    metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%" if grading != "Can't Grade because of Image Quality" else "N/A"
+    metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
     metadata.to_csv(metadata_file, index=False)
 
     # Push changes to GitHub
@@ -100,7 +90,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumothorax grading and image quality",
+            message="Update metadata with pneumothorax grading and drop Good_Image column",
             content=updated_content,
             sha=contents.sha
         )
