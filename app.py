@@ -23,12 +23,16 @@ try:
     with open(metadata_file, "wb") as f:
         f.write(contents.decoded_content)
     metadata = pd.read_csv(metadata_file)
+    
+    # Remove unnecessary columns
+    if "Unnamed: 3" in metadata.columns:
+        metadata.drop(columns=["Unnamed: 3"], inplace=True)
 except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
 
 # App title
-st.title("Pneumonia Grading ")
+st.title("Pneumothorax Grading & Image Quality Assessment")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -72,11 +76,20 @@ percentage_grade = st.slider(
     step=1
 )
 
+# Ask if the image is good
+st.write("### Is this a Good Image?")
+good_image = st.radio(
+    "Mark as:",
+    options=["Yes", "No"],
+    index=0 if row.get("Good_Image", "Yes") == "Yes" else 1
+)
+
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
     metadata.at[current_index, "Pneumothorax_Grading"] = grading
     metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
+    metadata.at[current_index, "Good_Image"] = good_image
     metadata.to_csv(metadata_file, index=False)
 
     # Push changes to GitHub
@@ -84,7 +97,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumothorax grading",
+            message="Update metadata with pneumothorax grading and image quality",
             content=updated_content,
             sha=contents.sha
         )
