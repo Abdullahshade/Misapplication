@@ -1,6 +1,6 @@
 Index,Image_File,Pneumothorax_Status,Good_Image,Percentage of Grade,Pneumothorax_Grading
 6193,image_1.png,1,Yes,17%,Can't Grade (Image Quality)
-377,image_2.png,1,No,33%,No Pneumothorax
+377,image_2.png,1,No,17%,No Pneumothorax
 9874,image_3.png,1,,,
 4966,image_4.png,1,,,
 5330,image_5.png,1,,,
