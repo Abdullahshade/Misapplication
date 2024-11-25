@@ -9,12 +9,12 @@ g = Github(GITHUB_TOKEN)
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshade/Misapplication"  # Replace with your GitHub repository name
-FILE_PATH = "Updated_GTruth_with_Grading.csv"  # Path to metadata CSV in your GitHub repo
+FILE_PATH = "Filtered_Table.csv"  # Path to updated metadata CSV in your GitHub repo
 repo = g.get_repo(REPO_NAME)
 
 # Local paths
 metadata_file = FILE_PATH
-images_folder = "Images"  # Folder where images are stored
+images_folder = "IImages"  # Updated folder where images are stored
 
 # Load metadata
 try:
@@ -39,26 +39,23 @@ current_index = st.session_state.current_index
 row = metadata.iloc[current_index]
 
 # Display the image
-image_path = f"{images_folder}/{row['Id']}.jpeg"
+image_path = f"{images_folder}/{row['Image_File']}"
 try:
-    st.image(Image.open(image_path), caption=f"Image ID: {row['Id']}", use_column_width=True)
+    st.image(Image.open(image_path), caption=f"Image: {row['Image_File']}", use_column_width=True)
 except FileNotFoundError:
-    st.error(f"Image {row['Id']}.jpeg not found in {images_folder}.")
+    st.error(f"Image {row['Image_File']} not found in {images_folder}.")
 
-# Show Ground Truth as pneumonia status
-ground_truth = row['Ground_Truth']
-if ground_truth == 1:
-    st.write("### Ground Truth: Pneumonia - Yes")
-else:
-    st.write("### Ground Truth: Pneumonia - No")
+# Show Ground Truth as Pneumothorax status
+status = "Yes" if row["Pneumothorax_Status"] == 1 else "No"
+st.write(f"### Ground Truth: Pneumothorax - {status}")
 
 # Editable fields for metadata
-st.write("### Update Pneumonia Grading:")
+st.write("### Update Pneumothorax Grading:")
 grading = st.selectbox(
-    "Pneumonia Grading",
-    options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],
-    index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(
-        row["Pneumonia_Grading"] if pd.notna(row["Pneumonia_Grading"]) else "No Pneumonia"
+    "Pneumothorax Grading",
+    options=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"],
+    index=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"].index(
+        row["Pneumothorax_Grading"] if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
     )
 )
 
@@ -78,7 +75,7 @@ percentage_grade = st.slider(
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
-    metadata.at[current_index, "Pneumonia_Grading"] = grading
+    metadata.at[current_index, "Pneumothorax_Grading"] = grading
     metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
     metadata.to_csv(metadata_file, index=False)
 
@@ -87,7 +84,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumonia grading",
+            message="Update metadata with pneumothorax grading",
             content=updated_content,
             sha=contents.sha
         )
