@@ -77,7 +77,7 @@ percentage_grade = st.slider(
 )
 
 # Ask if the image is good
-st.write("### Is this a Good Image? Select No if You can't lable the image beacuse the quality ")
+st.write("### Is this a Good Image?")
 good_image = st.radio(
     "Mark as:",
     options=["Yes", "No"],
