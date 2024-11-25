@@ -28,7 +28,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumonia Grading and Image Viewer with GitHub Integration")
+st.title("Pneumothorax Viewer with Existing Grading")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -49,17 +49,11 @@ except FileNotFoundError:
 status = "Yes" if row["Pneumothorax_Status"] == 1 else "No"
 st.write(f"### Ground Truth: Pneumothorax - {status}")
 
-# Editable fields for metadata
-st.write("### Update Pneumothorax Grading:")
-grading = st.selectbox(
-    "Pneumothorax Grading",
-    options=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"],
-    index=["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical"].index(
-        row["Pneumothorax_Grading"] if pd.notna(row.get("Pneumothorax_Grading")) else "No Pneumothorax"
-    )
-)
+# Show the existing Pneumothorax Grading
+grading = row["Pneumothorax_Grading"]
+st.write(f"### Current Grading: {grading}")
 
-# Slider for percentage grading
+# Editable fields for percentage grading
 percentage_grade = row.get("Percentage of Grade", 0)
 if not isinstance(percentage_grade, (int, float)) or pd.isna(percentage_grade):
     percentage_grade = 0  # Default to 0 if invalid data
@@ -75,7 +69,6 @@ percentage_grade = st.slider(
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
-    metadata.at[current_index, "Pneumothorax_Grading"] = grading
     metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
     metadata.to_csv(metadata_file, index=False)
 
@@ -84,7 +77,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumothorax grading",
+            message="Update metadata with percentage grade",
             content=updated_content,
             sha=contents.sha
         )
