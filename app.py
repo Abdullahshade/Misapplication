@@ -3,10 +3,9 @@ import pandas as pd
 from PIL import Image
 from github import Github
 
-# Authenticate with GitHub
+# Authenticate with GitHub using Streamlit Secrets
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 g = Github(GITHUB_TOKEN)
-
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshde/Misapplication"  # Replace with your GitHub repository name
