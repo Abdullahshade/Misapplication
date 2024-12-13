@@ -1,6 +1,6 @@
 Index,Image_ID,Percentage,Pneumothorax_Type,A,B,C,Label_Flag
 6193,image_1.png,4.2,Simple,0,0,0,1
-377,image_2.png,17%,,0,0,0,0
+377,image_2.png,4.2,Simple,0,0,0,1
 9874,image_3.png,,,0,0,0,0
 4966,image_4.png,45%,,0,0,0,0
 5330,image_5.png,,,0,0,0,0
