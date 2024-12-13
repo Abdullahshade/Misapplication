@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from github import Github
+import os
 
 # Authenticate with GitHub using Streamlit Secrets
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
@@ -28,7 +29,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumonia Grading and Image Viewer with GitHub Integration")
+st.title("Pneumothorax *******Grading and Image Viewer with GitHub Integration")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -38,15 +39,24 @@ if "current_index" not in st.session_state:
 current_index = st.session_state.current_index
 row = metadata.iloc[current_index]
 
-# Display the image
-image_path = f"{images_folder}/{row['Image_ID']}.jpeg"
-try:
-    st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
-except FileNotFoundError:
-    st.error(f"Image {row['Image_ID']}.jpeg not found in {images_folder}.")
+# Check if image ID is valid (check if file exists in the images folder)
+image_path_base = f"{images_folder}/{row['Image_ID']}"
+image_extensions = ['.jpeg', '.jpg', '.png']
 
+image_found = False
+for ext in image_extensions:
+    image_path = f"{image_path_base}{ext}"
+    if os.path.exists(image_path):
+        try:
+            st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
+            image_found = True
+            break
+        except Exception as e:
+            st.error(f"Error opening image {image_path}: {e}")
+            break
 
-
+if not image_found:
+    st.error(f"Image {row['Image_ID']} not found in {images_folder} with expected extensions.")
 
 # Handling cases where Pneumothorax_Type or Percentage are missing
 if pd.isna(row['Pneumothorax_Type']) or pd.isna(row['Percentage']):
@@ -89,6 +99,7 @@ if st.button("Save Changes"):
         st.success("Changes saved locally and successfully pushed to GitHub!")
     except Exception as e:
         st.error(f"Failed to push changes to GitHub: {e}")
+
 # Navigation between images
 col1, col2 = st.columns(2)
 if col1.button("Previous") and current_index > 0:
