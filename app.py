@@ -27,19 +27,6 @@ except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
 
-# Modify metadata table structure
-metadata = metadata[["Index", "Image_File", "Percentage of Grade"]]
-metadata.rename(columns={
-    "Image_File": "Image_ID",
-    "Percentage of Grade": "Percentage"
-}, inplace=True)
-
-# Add new columns
-metadata["Pneumothorax_Type"] = ""
-metadata["A"] = 0
-metadata["B"] = 0
-metadata["C"] = 0
-metadata["Label_Flag"] = 0
 
 # App title
 st.title("Pneumothorax Grading and Image Viewer with GitHub Integration")
