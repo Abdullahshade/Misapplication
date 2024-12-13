@@ -61,7 +61,7 @@ if row["Label_Flag"] == 1:
     st.session_state.current_index = current_index
 
 # Display the image
-image_path = f"{images_folder}/{row['Image_ID']}.jpeg"
+image_path = f"{images_folder}/{row['Image_ID']}"
 try:
     st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
 except FileNotFoundError:
