@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from github import Github
-import os
 
 # Authenticate with GitHub using Streamlit Secrets
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
@@ -10,7 +9,7 @@ g = Github(GITHUB_TOKEN)
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshade/Misapplication"  # Replace with your GitHub repository name
-FILE_PATH = "Filtered_Table.csv"  # Path to metadata CSV in your GitHub repo
+FILE_PATH = "Updated_GTruth_with_Grading.csv"  # Path to metadata CSV in your GitHub repo
 repo = g.get_repo(REPO_NAME)
 
 # Local paths
@@ -29,7 +28,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumothorax *******Grading and Image Viewer with GitHub Integration")
+st.title("Pneumonia Grading and Image Viewer with GitHub Integration")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -39,52 +38,48 @@ if "current_index" not in st.session_state:
 current_index = st.session_state.current_index
 row = metadata.iloc[current_index]
 
-# Check if image ID is valid (check if file exists in the images folder)
-image_path_base = f"{images_folder}/{row['Image_ID']}"
-image_extensions = ['.jpeg', '.jpg', '.png']
+# Display the image
+image_path = f"{images_folder}/{row['Id']}.jpeg"
+try:
+    st.image(Image.open(image_path), caption=f"Image ID: {row['Id']}", use_column_width=True)
+except FileNotFoundError:
+    st.error(f"Image {row['Id']}.jpeg not found in {images_folder}.")
 
-image_found = False
-for ext in image_extensions:
-    image_path = f"{image_path_base}{ext}"
-    if os.path.exists(image_path):
-        try:
-            st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
-            image_found = True
-            break
-        except Exception as e:
-            st.error(f"Error opening image {image_path}: {e}")
-            break
-
-if not image_found:
-    st.error(f"Image {row['Image_ID']} not found in {images_folder} with expected extensions.")
-
-# Handling cases where Pneumothorax_Type or Percentage are missing
-if pd.isna(row['Pneumothorax_Type']) or pd.isna(row['Percentage']):
-    st.warning(f"Missing Pneumothorax Type or Percentage for Image {row['Image_ID']}. Please update.")
-    pneumothorax_type = st.selectbox("Pneumothorax Type", ["Simple", "Tension"], index=0)
-    A = st.number_input("Enter value for A:", min_value=0, max_value=100, value=0, step=1)
-    B = st.number_input("Enter value for B:", min_value=0, max_value=100, value=0, step=1)
-    C = st.number_input("Enter value for C:", min_value=0, max_value=100, value=0, step=1)
-    percentage = 4.2 + (4.7 * A + B + C)
-    st.write(f"### Calculated Pneumothorax Volume Percentage: {percentage:.2f}%")
-
+# Show Ground Truth as pneumonia status
+ground_truth = row['Ground_Truth']
+if ground_truth == 1:
+    st.write("### Ground Truth: Pneumonia - Yes")
 else:
-    pneumothorax_type = row["Pneumothorax_Type"]
-    A = row["A"]
-    B = row["B"]
-    C = row["C"]
-    percentage = row["Percentage"]
-    st.write(f"### Pneumothorax Volume Percentage: {percentage}")
+    st.write("### Ground Truth: Pneumonia - No")
+
+# Editable fields for metadata
+st.write("### Update Pneumonia Grading:")
+grading = st.selectbox(
+    "Pneumonia Grading",
+    options=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"],
+    index=["No Pneumonia", "Mild", "Moderate", "Severe", "Critical"].index(
+        row["Pneumonia_Grading"] if pd.notna(row["Pneumonia_Grading"]) else "No Pneumonia"
+    )
+)
+
+# Slider for percentage grading
+percentage_grade = row.get("Percentage of Grade", 0)
+if not isinstance(percentage_grade, (int, float)) or pd.isna(percentage_grade):
+    percentage_grade = 0  # Default to 0 if invalid data
+
+percentage_grade = st.slider(
+    "Percentage of Grade",
+    min_value=0,
+    max_value=100,
+    value=int(percentage_grade),
+    step=1
+)
 
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
-    metadata.at[current_index, "Pneumothorax_Type"] = pneumothorax_type
-    metadata.at[current_index, "A"] = A
-    metadata.at[current_index, "B"] = B
-    metadata.at[current_index, "C"] = C
-    metadata.at[current_index, "Percentage"] = percentage
-    metadata.at[current_index, "Label_Flag"] = 1
+    metadata.at[current_index, "Pneumonia_Grading"] = grading
+    metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
     metadata.to_csv(metadata_file, index=False)
 
     # Push changes to GitHub
@@ -92,7 +87,7 @@ if st.button("Save Changes"):
         updated_content = metadata.to_csv(index=False)
         repo.update_file(
             path=contents.path,
-            message="Update metadata with pneumothorax grading",
+            message="Update metadata with pneumonia grading",
             content=updated_content,
             sha=contents.sha
         )
