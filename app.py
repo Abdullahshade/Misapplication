@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from github import Github
+import os
 
 # Authenticate with GitHub using Streamlit Secrets
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
@@ -27,7 +28,6 @@ except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
 
-
 # App title
 st.title("Pneumothorax Grading and Image Viewer with GitHub Integration")
 
@@ -48,11 +48,24 @@ if row["Label_Flag"] == 1:
     st.session_state.current_index = current_index
 
 # Display the image
-image_path = f"{images_folder}/{row['Image_ID']}"
-try:
-    st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
-except FileNotFoundError:
-    st.error(f"Image {row['Image_ID']}.jpeg not found in {images_folder}.")
+image_path_base = f"{images_folder}/{row['Image_ID']}"
+image_extensions = ['.jpeg', '.jpg', '.png']
+
+# Try loading image with different extensions
+image_found = False
+for ext in image_extensions:
+    image_path = f"{image_path_base}{ext}"
+    if os.path.exists(image_path):
+        try:
+            st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
+            image_found = True
+            break
+        except Exception as e:
+            st.error(f"Error opening image {image_path}: {e}")
+            break
+
+if not image_found:
+    st.error(f"Image {row['Image_ID']} not found in {images_folder} with expected extensions.")
 
 # User input for Pneumothorax Type and A, B, C values
 st.write("### Update Pneumothorax Information:")
