@@ -9,12 +9,12 @@ g = Github(GITHUB_TOKEN)
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshade/Misapplication"  # Replace with your GitHub repository name
-FILE_PATH = "Filtered_Table.csv"  # Path to updated metadata CSV in your GitHub repo
+FILE_PATH = "Updated_GTruth_with_Grading.csv"  # Path to metadata CSV in your GitHub repo
 repo = g.get_repo(REPO_NAME)
 
 # Local paths
 metadata_file = FILE_PATH
-images_folder = "IImages"  # Updated folder where images are stored
+images_folder = "Images"  # Folder where images are stored
 
 # Load metadata
 try:
@@ -23,16 +23,26 @@ try:
     with open(metadata_file, "wb") as f:
         f.write(contents.decoded_content)
     metadata = pd.read_csv(metadata_file)
-    
-    # Remove unnecessary columns
-    if "Unnamed: 3" in metadata.columns:
-        metadata.drop(columns=["Unnamed: 3"], inplace=True)
 except Exception as e:
     st.error(f"Failed to fetch metadata from GitHub: {e}")
     st.stop()
 
+# Modify metadata table structure
+metadata = metadata[["Index", "Image_File", "Percentage of Grade"]]
+metadata.rename(columns={
+    "Image_File": "Image_ID",
+    "Percentage of Grade": "Percentage"
+}, inplace=True)
+
+# Add new columns
+metadata["Pneumothorax_Type"] = ""
+metadata["A"] = 0
+metadata["B"] = 0
+metadata["C"] = 0
+metadata["Label_Flag"] = 0
+
 # App title
-st.title("Pneumothorax Grading")
+st.title("Pneumothorax Grading and Image Viewer with GitHub Integration")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -42,52 +52,43 @@ if "current_index" not in st.session_state:
 current_index = st.session_state.current_index
 row = metadata.iloc[current_index]
 
+# Check label flag
+if row["Label_Flag"] == 1:
+    st.warning("This image is already labeled. Moving to the next unlabeled image.")
+    while row["Label_Flag"] == 1 and current_index < len(metadata) - 1:
+        current_index += 1
+        row = metadata.iloc[current_index]
+    st.session_state.current_index = current_index
+
 # Display the image
-image_path = f"{images_folder}/{row['Image_File']}"
+image_path = f"{images_folder}/{row['Image_ID']}.jpeg"
 try:
-    st.image(Image.open(image_path), caption=f"Image: {row['Image_File']}", use_column_width=True)
+    st.image(Image.open(image_path), caption=f"Image ID: {row['Image_ID']}", use_column_width=True)
 except FileNotFoundError:
-    st.error(f"Image {row['Image_File']} not found in {images_folder}.")
+    st.error(f"Image {row['Image_ID']}.jpeg not found in {images_folder}.")
 
-# Show Ground Truth as Pneumothorax status
-status = "Yes" if row["Pneumothorax_Status"] == 1 else "No"
-st.write(f"### Ground Truth: Pneumothorax - {status}")
-
-# Editable fields for metadata
-st.write("### Update Pneumothorax Grading:")
-
-# Define grading options and ensure the current grading is valid
-grading_options = ["No Pneumothorax", "Mild", "Moderate", "Severe", "Critical", "Can't Grade (Image Quality)"]
-current_grading = row.get("Pneumothorax_Grading")
-
-# Ensure current_grading is valid, or default to "No Pneumothorax"
-if current_grading not in grading_options:
-    current_grading = "No Pneumothorax"
-
-grading = st.selectbox(
-    "Pneumothorax Grading",
-    options=grading_options,
-    index=grading_options.index(current_grading)
+# User input for Pneumothorax Type and A, B, C values
+st.write("### Update Pneumothorax Information:")
+pneumothorax_type = st.selectbox(
+    "Pneumothorax Type", ["Simple", "Tension"], index=0
 )
+A = st.number_input("Enter value for A:", min_value=0, max_value=100, value=0, step=1)
+B = st.number_input("Enter value for B:", min_value=0, max_value=100, value=0, step=1)
+C = st.number_input("Enter value for C:", min_value=0, max_value=100, value=0, step=1)
 
-# Slider for percentage grading
-percentage_grade = row.get("Percentage of Grade", 0)
-if not isinstance(percentage_grade, (int, float)) or pd.isna(percentage_grade):
-    percentage_grade = 0  # Default to 0 if invalid data
-
-percentage_grade = st.slider(
-    "Percentage of Grade",
-    min_value=0,
-    max_value=100,
-    value=int(percentage_grade),
-    step=1
-)
+# Calculate Pneumothorax Volume Percentage
+percentage = 4.2 + (4.7 * A + B + C)
+st.write(f"### Calculated Pneumothorax Volume Percentage: {percentage:.2f}%")
 
 # Save changes
 if st.button("Save Changes"):
     # Update the metadata locally
-    metadata.at[current_index, "Pneumothorax_Grading"] = grading
-    metadata.at[current_index, "Percentage of Grade"] = f"{percentage_grade}%"
+    metadata.at[current_index, "Pneumothorax_Type"] = pneumothorax_type
+    metadata.at[current_index, "A"] = A
+    metadata.at[current_index, "B"] = B
+    metadata.at[current_index, "C"] = C
+    metadata.at[current_index, "Percentage"] = percentage
+    metadata.at[current_index, "Label_Flag"] = 1
     metadata.to_csv(metadata_file, index=False)
 
     # Push changes to GitHub
