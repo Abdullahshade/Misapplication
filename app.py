@@ -9,7 +9,7 @@ g = Github(GITHUB_TOKEN)
 
 # Define repository and file paths
 REPO_NAME = "Abdullahshade/Misapplication"  # Replace with your GitHub repository name
-FILE_PATH = "Updated_GTruth_with_Grading.csv"  # Path to metadata CSV in your GitHub repo
+FILE_PATH = "Filtered_Table.csv"  # Path to metadata CSV in your GitHub repo
 repo = g.get_repo(REPO_NAME)
 
 # Local paths
