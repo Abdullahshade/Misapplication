@@ -15,7 +15,7 @@ repo = g.get_repo(REPO_NAME)
 
 # Local paths
 metadata_file = FILE_PATH
-images_folder = "Images"  # Folder where images are stored
+images_folder = "IImages"  # Folder where images are stored
 
 # Load metadata
 try:
