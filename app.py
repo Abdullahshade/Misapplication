@@ -29,7 +29,7 @@ except Exception as e:
     st.stop()
 
 # App title
-st.title("Pneumothorax Grading and Image Viewer with GitHub Integration")
+st.title("Pneumothorax *******Grading and Image Viewer with GitHub Integration")
 
 # Initialize session state for the current index
 if "current_index" not in st.session_state:
@@ -39,19 +39,10 @@ if "current_index" not in st.session_state:
 current_index = st.session_state.current_index
 row = metadata.iloc[current_index]
 
-# Check label flag
-if row["Label_Flag"] == 1:
-    st.warning("This image is already labeled. Moving to the next unlabeled image.")
-    while row["Label_Flag"] == 1 and current_index < len(metadata) - 1:
-        current_index += 1
-        row = metadata.iloc[current_index]
-    st.session_state.current_index = current_index
-
-# Display the image
+# Check if image ID is valid (check if file exists in the images folder)
 image_path_base = f"{images_folder}/{row['Image_ID']}"
 image_extensions = ['.jpeg', '.jpg', '.png']
 
-# Try loading image with different extensions
 image_found = False
 for ext in image_extensions:
     image_path = f"{image_path_base}{ext}"
@@ -67,18 +58,23 @@ for ext in image_extensions:
 if not image_found:
     st.error(f"Image {row['Image_ID']} not found in {images_folder} with expected extensions.")
 
-# User input for Pneumothorax Type and A, B, C values
-st.write("### Update Pneumothorax Information:")
-pneumothorax_type = st.selectbox(
-    "Pneumothorax Type", ["Simple", "Tension"], index=0
-)
-A = st.number_input("Enter value for A:", min_value=0, max_value=100, value=0, step=1)
-B = st.number_input("Enter value for B:", min_value=0, max_value=100, value=0, step=1)
-C = st.number_input("Enter value for C:", min_value=0, max_value=100, value=0, step=1)
+# Handling cases where Pneumothorax_Type or Percentage are missing
+if pd.isna(row['Pneumothorax_Type']) or pd.isna(row['Percentage']):
+    st.warning(f"Missing Pneumothorax Type or Percentage for Image {row['Image_ID']}. Please update.")
+    pneumothorax_type = st.selectbox("Pneumothorax Type", ["Simple", "Tension"], index=0)
+    A = st.number_input("Enter value for A:", min_value=0, max_value=100, value=0, step=1)
+    B = st.number_input("Enter value for B:", min_value=0, max_value=100, value=0, step=1)
+    C = st.number_input("Enter value for C:", min_value=0, max_value=100, value=0, step=1)
+    percentage = 4.2 + (4.7 * A + B + C)
+    st.write(f"### Calculated Pneumothorax Volume Percentage: {percentage:.2f}%")
 
-# Calculate Pneumothorax Volume Percentage
-percentage = 4.2 + (4.7 * A + B + C)
-st.write(f"### Calculated Pneumothorax Volume Percentage: {percentage:.2f}%")
+else:
+    pneumothorax_type = row["Pneumothorax_Type"]
+    A = row["A"]
+    B = row["B"]
+    C = row["C"]
+    percentage = row["Percentage"]
+    st.write(f"### Pneumothorax Volume Percentage: {percentage}")
 
 # Save changes
 if st.button("Save Changes"):
